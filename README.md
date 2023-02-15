@@ -65,7 +65,7 @@ Todos Los derechos reservados. Mira ``LICENSE`` para mas informacion.
      <td align="center"><a href="https://github.com/krhiz1988"><img src="https://avatars.githubusercontent.com/u/19410168?v=4" width="100px;" alt="Cristian-Rivera"/>        <br/><sub><b>Cristian Rivera</b></sub></a></td>
     </tc>
     <tc>
-     <td align="center"><a href=""><img src="" width="100px;" alt="Joanny-Werner"/>        <br/><sub><b>Joanny Werner</b></sub></a></td>
+     <td align="center"><a href="https://github.com/jjwernerm"><img src="https://avatars.githubusercontent.com/u/23624731?v=4" width="100px;" alt="Joanny-Werner"/>        <br/><sub><b>Joanny Werner</b></sub></a></td>
     </tc>
   </tr>
 </table>
