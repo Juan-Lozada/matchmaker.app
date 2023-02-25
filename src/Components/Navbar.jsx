@@ -1,7 +1,6 @@
 import React from 'react'
 import { Navbar, Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom'
-import Logo from '../Assets/Imgs/Logo.png'
 
 export default function Nvbar() {
 
@@ -12,7 +11,7 @@ export default function Nvbar() {
                 <Container className='justify-content-start px-3 '>
                     <Navbar.Brand className='justify-content-start p-2'>
                         <img
-                            src={Logo}
+                            src={"https://cdn-icons-png.flaticon.com/512/272/272658.png"}
                             width="150"
                             height="75"
                             className="d-inline-block align-top"
