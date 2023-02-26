@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, useNavigate, NavLink } from "react-router-dom";
 import {
     MDBBtn,
     MDBContainer,
@@ -12,9 +12,31 @@ import {
     MDBInput
 }
     from 'mdb-react-ui-kit';
+    
+    import { useContext, useState } from "react";
 
+    import ContextOrigin from "../Context";
+    const { Context } = ContextOrigin;
 
     export default function Login() {
+        const { setSession, users } = useContext(Context);
+
+        const [user, setUser] = useState({});
+      
+        const navigate = useNavigate();
+        const addUser = () => {
+          const userExists =
+            users.some((u) => u.email == user.email && u.password == user.password) ||
+            true;
+          if (userExists) {
+            setSession(user);
+            alert("Usuario identificado con éxito");
+            navigate("/dashboard");
+          } else {
+            alert("Email o contraseña incorrecta");
+          }
+        };
+
     return (
         <MDBContainer>
 
@@ -36,11 +58,14 @@ import {
 
                             <h5 className="fw-normal my-4 pb-3" style={{ letterSpacing: '1px' }}>Sign into your account</h5>
 
-                            <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg" />
-                            <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg" />
+                            <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg" 
+                            onChange={({ target }) => setUser({ ...user, ["email"]: target.value })}/>
 
-                            <MDBBtn className="mb-4 px-5" color='dark' size='lg'>Login</MDBBtn>
-                            <a className="small text-muted" href="#!">Forgot password?</a>
+                            <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg" 
+                            onChange={({ target }) => setUser({ ...user, ["password"]: target.value })} />
+
+                            <MDBBtn className="mb-4 px-5" color='dark' size='lg' onClick={addUser}>Login</MDBBtn>
+                            <a className="small text-muted" href="/recover">Forgot password?</a>
                             <p className="mb-5 pb-lg-2" style={{ color: '#393f81' }}>Don't have an account? <NavLink to="/register" style={{ color: '#393f81' }}>Register here</NavLink></p>
 
                             <div className='d-flex flex-row justify-content-start'>
