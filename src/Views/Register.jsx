@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
+
+import '../styles/register.css';
+
 import {
   MDBBtn,
   MDBContainer,
@@ -31,7 +34,7 @@ export default function Register() {
 
 
   return (
-    <MDBContainer fluid className='my-5'>
+    <MDBContainer fluid className='register my-5' style={{  borderRadius: '25px'}}>
 
       <MDBRow className='g-0 align-items-center'>
         <MDBCol col='6'>
@@ -61,7 +64,7 @@ export default function Register() {
                 <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
               </div>
 
-              <MDBBtn className="mb-4 px-5" color='dark' size='lg' onClick={addUser}>sign up</MDBBtn>
+              <MDBBtn className="mb-4 px-5 text-dark" color='dark' size='lg' onClick={addUser}>sign up</MDBBtn>
 
             </MDBCardBody>
           </MDBCard>

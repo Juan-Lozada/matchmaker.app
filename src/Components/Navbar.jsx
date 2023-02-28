@@ -13,23 +13,22 @@ import logo from '../img/favicon.png';
 import '../styles/navbar.css';
 
 export default function Nvbar() {
-  const activeLink = ({ isActive }) => (isActive ? 'active' : 'default')
 
   return (
     <>
-      <Navbar fixed="top" bg="dark" variant="dark" expand="lg">
+      <Navbar fixed="top" bg="dark" variant="dark" expand="lg" className='d-flex justify-content-start px-5'>
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Container className='d-flex flex-row-reverse px-5 '>
+              <Container className='d-flex justify-content-start px-5 '>
                 <NavLink className={activeLink} to='/Login' style={{ textDecoration: 'none', Color:"#BAD7E9" }}>
                   Login
                 </NavLink>
               </Container>
-              <Container className='d-flex flex-row-reverse px-5 '>
+              <Container className='d-flex justify-content-start px-5 '>
                 <NavLink className={activeLink} to='/Login' style={{ textDecoration: 'none', Color:"#BAD7E9" }}>
-                  Login
+                  Registrar
                 </NavLink>
               </Container>
             </Nav>

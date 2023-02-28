@@ -9,7 +9,8 @@ import LandingPage from "./Views/Landingpage"
 import Context from "./Context";
 import Login from "./Views/Login";
 import Register from "./Views/Register";
-import Canchas from "./Components/Canchas";
+import UserCanchas from "./Components/Canchas";
+import ProvAsidePerfil from "./Components/Perfil"
 
 const { Provider } = Context;
 
@@ -22,7 +23,9 @@ function App() {
             <Route path="/" element={ <LandingPage/> } />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/canchas" element={<Canchas />} />
+            <Route path="/canchas" element={<UserCanchas />} />
+            <Route path="/dashboard" element={<ProvAsidePerfil />} />
+
           </Routes>
         </BrowserRouter>
       </Provider>

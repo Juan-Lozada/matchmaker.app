@@ -23,7 +23,7 @@ export default function Canchas() {
           />
         </div>
   
-        <div className="publicaciones">
+        <div className="canchas">
           {canchasFiltradas.map((p, i) => {
             return <Cancha Cancha={p} key={i} />;
           })}

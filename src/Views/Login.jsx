@@ -12,6 +12,8 @@ import {
     MDBInput
 }
     from 'mdb-react-ui-kit';
+
+    import '../styles/login.css';
     
     import { useContext, useState } from "react";
 
@@ -38,10 +40,10 @@ import {
         };
 
     return (
-        <MDBContainer>
+        <MDBContainer className='login px-4' style={{  borderRadius: '25px'}} >
 
-            <MDBCard className='my-5 cascading-left' style={{background: 'hsla(0, 0%, 100%, 0.55)',  backdropFilter: 'blur(30px)'}}>
-                <MDBRow className='g-0'>
+            <MDBCard className=' my-5 cascading-left' style={{background: 'hsla(0, 0%, 100%, 0.55)',  backdropFilter: 'blur(30px)'}}>
+                <MDBRow className=' g-0'>
 
                     <MDBCol >
                         <img src="https://w-wa.co.uk/wp-content/uploads/2021/04/Wynne-Williams_associates_landscape_architects_essex_MUGA_design_drone_shot.jpg"

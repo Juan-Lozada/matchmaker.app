@@ -1,22 +1,23 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { MDBInput } from "mdb-react-ui-kit";
 
 import { useContext, useState } from "react";
 
 import ContextOrigin from "../Context";
 const { Context } = ContextOrigin;
 
-export default function actualizarDatos() {
+export default function PerfilUser() {
   const { setUsers, users, session } = useContext(Context);
 
   const [user, setUser] = useState({});
 
-  const updateUser = () => {
+  const actualizarInfo = () => {
     const { user_id } = session;
-    const userFoundIndex = users.findIndex((u) => u.user_id === user_id);
-    users[userFoundIndex] = user;
+    const userIndex = users.findIndex((u) => u.user_id === user_id);
+    users[userIndex] = user;
     setUsers([...users]);
-    alert("Datos actualizados con éxito");
+    alert("Se han actualizado tus datos correctamente");
   };
 
   return (
@@ -28,36 +29,22 @@ export default function actualizarDatos() {
         </div>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label>Email address</Form.Label>
-          <Form.Control
-            disabled
-            onChange={({ target }) =>
-              setUser({ ...user, ["email"]: target.value })
-            }
-            type="email"
-            placeholder="name@example.com"
-          />
+          <MDBInput disabled wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg"
+            onChange={({ target }) => setUser({ ...user, ["email"]: target.value })} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label>Password</Form.Label>
-          <Form.Control
-            onChange={({ target }) =>
-              setUser({ ...user, ["password"]: target.value })
-            }
-            type="password"
-            placeholder="******"
-          />
+          <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg"
+            onChange={({ target }) => setUser({ ...user, ["password"]: target.value })} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label>Avatar URL</Form.Label>
           <Form.Control
-            onChange={({ target }) =>
-              setUser({ ...user, ["picture"]: target.value })
-            }
             type="text"
           />
         </Form.Group>
 
-        <Button variant="warning me-3" onClick={updateUser}>
+        <Button variant="warning me-3" onClick={actualizarInfo}>
           Actualizar
         </Button>
       </Form>
