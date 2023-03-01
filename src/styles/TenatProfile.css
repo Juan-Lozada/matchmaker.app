@@ -1,0 +1,23 @@
+.text-start{
+    text-align: start !important;
+}
+
+.text-label{
+    color: #fff;
+}
+
+.card-profile{
+ padding: 0px !important;
+ background-color: #122953;
+ color: #fff;
+}
+
+.btn-actualizar{
+    background-color: #9e1b4a ;
+    color: #fff;
+}
+
+.card-mensaje{
+    background-color: #58224e;
+    color: #fff;
+}
