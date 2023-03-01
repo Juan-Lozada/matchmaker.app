@@ -5,19 +5,20 @@ import Carousel1 from '../img/Carousel1.jpg'
 
 import '../styles/header.css';
 import LandingCarousel from './Carousel';
+import Matchmakerlogo from '../img/Matchmakerlogo.png' 
 
 const Header = () => {
   return (
     <header>
       <div className="intro-logo jumbo-bg align-center" style={{ background: 'hsla(0, 0%, 100%, 0.55)', backdropFilter: 'blur(30px)' }}>
-        <h1>MATCHMAKER</h1>
+        <img src={Matchmakerlogo} style={{width:'60vh', height:'60vh' }} />
         <h3>Conectate a la comunidad deportiva y haz match en tu cancha favorita.</h3>
-        <Container className='d-grid gap-3 col-4 '>
-          <NavLink to='/Login' style={{ textDecoration: 'none', Color: "#BAD7E9" }}>
-            <button type="button" class="btn btn-outline-secondary btn-rounded d-grid gap-3 p-2 col-12   " data-mdb-ripple-color="dark">Login</button>
+        <Container className='d-flex gap-5 justify-content-center'>
+          <NavLink to='/Login' style={{ textDecoration: 'none', Color: "#BAD7E9" }} className='col-3' >
+            <button type="button" class="btn btn-primary btn-lg btn-block " data-mdb-ripple-color="dark">Login</button>
           </NavLink>
-          <NavLink to='/register' style={{ textDecoration: 'none', Color: "#BAD7E9" }}>
-            <button type="button" class="btn btn-outline-secondary btn-rounded d-grid gap-3 p-2 col-12  " data-mdb-ripple-color="dark">Register</button>
+          <NavLink to='/register' style={{ textDecoration: 'none', Color: "#BAD7E9" }} className='col-3' >
+            <button type="button" class="btn btn-primary btn-lg btn-block " data-mdb-ripple-color="dark">Register</button>
           </NavLink>
         </Container>
         <LandingCarousel />
