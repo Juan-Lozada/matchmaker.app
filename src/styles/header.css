@@ -1,0 +1,144 @@
+body {
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.background {
+    background-image: url("https://media.istockphoto.com/id/1281595486/photo/aerial-hong-kongs-housing-estate-with-basketball-court.jpg?s=612x612&w=0&k=20&c=Rpr5HS8FG2sXELs2mziV67WtCm4Bc0orENDIW-RaQF4=");
+    background-repeat: no-repeat;
+    background-size: 71.5% 100%;
+    background-position: left;
+    position: relative;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+
+}
+
+header {
+    margin-bottom: 1rem;
+    height: 100vh;
+
+}
+
+.intro-logo {
+    display: flex;
+    position: absolute;
+    top: 1em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    background-image: url(../Components/Carousel.jsx);
+
+}
+
+.intro-logo h1 {
+    font-size: 1.8em;
+    font-weight: 900;
+    font-family: 'Philosopher', sans-serif;
+    color: var(--brand-color);
+
+}
+
+@media (min-width: 768px) {
+    .intro-logo h1 {
+        font-size: 3.5em;
+    }
+}
+
+.intro-logo h3 {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--gray-color-1);
+    margin-bottom: 3em;
+}
+
+.intro-logo img {
+    max-width: 95%;
+    height: auto;
+}
+
+
+.intro-button {
+    margin-top: 2.3em;
+    margin-bottom: 3em;
+
+}
+
+.intro-button a {
+    padding: 0.65em 2.6em;
+    border-radius: 20px;
+    color: var(--brand-color);
+    border: 1.8px solid var(--brand-color);
+    background: white;
+    transition: all 0.5s;
+
+}
+
+.intro-button a:hover {
+    background-color: var(--brand-color);
+    color: white;
+}
+
+
+.btn {
+    font-family: "Lato";
+    text-transform: uppercase;
+    font-weight: 300;
+    border-radius: 2px;
+    background-color: transparent;
+    border: 3px solid #f6f6f6;
+    padding: 6px 12px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+
+}
+
+.btn:hover,
+button:hover {
+    outline: 0;
+    color: #f6f6f6;
+}
+
+.btn:active,
+button:active {
+    outline: 0;
+    color: #f6f6f6;
+}
+
+.btn {
+    background: linear-gradient(to bottom, #122953 50%, transparent 50%);
+    background-size: 100% 200%;
+    background-position: left bottom;
+    color: #000;
+}
+
+.btn:hover {
+    background-position: right top;
+
+}
