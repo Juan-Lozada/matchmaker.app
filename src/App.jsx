@@ -25,7 +25,6 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/canchas" element={<UserCanchas />} />
             <Route path="/dashboard" element={<ProvAsidePerfil />} />
-
           </Routes>
         </BrowserRouter>
       </Provider>
