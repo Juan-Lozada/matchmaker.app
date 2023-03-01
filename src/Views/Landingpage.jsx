@@ -1,12 +1,11 @@
 import Navbar from "../Components/Navbar";
-import Carousel from "../Components/Carousel";
+import Header from "../Components/Header";
 import FooterComponent from "../Components/Footer";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <Carousel />
+      <Header />
       <FooterComponent/>
     </>
   );

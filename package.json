@@ -17,10 +17,12 @@
     "force": "latest",
     "mdb-react-ui-kit": "latest",
     "react": "latest",
+    "react-background-slider": "latest",
     "react-bootstrap": "latest",
     "react-dom": "latest",
     "react-router-dom": "latest",
-    "react-scripts": "latest"
+    "react-scripts": "latest",
+    "swiper": "latest"
   },
   "devDependencies": {
     "@svgr/plugin-svgo": "^6.5.1",
