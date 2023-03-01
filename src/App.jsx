@@ -28,11 +28,9 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/canchas" element={<UserCanchas />} />
             <Route path="/dashboard" element={<ProvAsidePerfil />} />
-<<<<<<< HEAD
-=======
             <Route path="/tenant/profile" element={<TenantProfileView />} />
             <Route path="/tenant/dashboard" element={<TenantHome />} />
->>>>>>> 5e8492a916dd945d1aff7b5e438435a455f34e1d
+
           </Routes>
         </BrowserRouter>
       </Provider>
