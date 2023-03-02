@@ -8,7 +8,7 @@ import "../styles/footer.css";
 export default function FooterComponent() {
     return (
         <>
-            <footer className="page-footer font-small  pt-2 " style={{ fixed: "bottom", color: "#122953" }}>
+            <footer className="page-footer font-small  pt-2 "   >
                 <Container className='d-flex flex-column justify-content-center text-light' style={{ color: "#122953" }} >
                     <div className="container-fluid text-center text-md-left">
                         <div className="row">
@@ -20,7 +20,7 @@ export default function FooterComponent() {
                         </div>
                     </div>
                     <div className="footer-copyright text-center py-3">© MatchMaker APP 2023 Copyright:
-                        <NavLink to='/home' style={{ textDecoration: 'none' }}>
+                        <NavLink to='/' style={{ textDecoration: 'none' }}>
                             www.matchmaker.com
                         </NavLink>
                     </div>

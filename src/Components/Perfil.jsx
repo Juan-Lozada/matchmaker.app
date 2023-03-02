@@ -29,7 +29,7 @@ export default function PerfilUser() {
         </div>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label>Email address</Form.Label>
-          <MDBInput disabled wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg"
+          <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg"
             onChange={({ target }) => setUser({ ...user, ["email"]: target.value })} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">

@@ -4,12 +4,11 @@ import { NavLink } from 'react-router-dom';
 import Carousel1 from '../img/Carousel1.jpg'
 
 import '../styles/header.css';
-import LandingCarousel from './Carousel';
 import Matchmakerlogo from '../img/Matchmakerlogo.png' 
 
 const Header = () => {
   return (
-    <header>
+    <div className='background'>
       <div className="intro-logo jumbo-bg align-center" style={{ background: 'hsla(0, 0%, 100%, 0.55)', backdropFilter: 'blur(30px)' }}>
         <img src={Matchmakerlogo} style={{width:'60vh', height:'60vh' }} />
         <h3>Conectate a la comunidad deportiva y haz match en tu cancha favorita.</h3>
@@ -21,9 +20,8 @@ const Header = () => {
             <button type="button" class="btn btn-primary btn-lg btn-block " data-mdb-ripple-color="dark">Register</button>
           </NavLink>
         </Container>
-        <LandingCarousel />
       </div>
-    </header>
+    </div>
   )
 }
 

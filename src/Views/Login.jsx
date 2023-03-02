@@ -33,7 +33,7 @@ import {
           if (userExists) {
             setSession(user);
             alert("Usuario identificado con éxito");
-            navigate("/dashboard");
+            navigate("/user/dashboard");
           } else {
             alert("Email o contraseña incorrecta");
           }

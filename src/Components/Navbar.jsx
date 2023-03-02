@@ -22,12 +22,12 @@ export default function Nvbar() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Container className='d-flex justify-content-start px-5 '>
-                <NavLink className={activeLink} to='/Login' style={{ textDecoration: 'none', Color:"#BAD7E9" }}>
+                <NavLink to='/Login' style={{ textDecoration: 'none', Color:"#BAD7E9" }}>
                   Login
                 </NavLink>
               </Container>
               <Container className='d-flex justify-content-start px-5 '>
-                <NavLink className={activeLink} to='/Login' style={{ textDecoration: 'none', Color:"#BAD7E9" }}>
+                <NavLink  to='/Login' style={{ textDecoration: 'none', Color:"#BAD7E9" }}>
                   Registrar
                 </NavLink>
               </Container>

@@ -11,13 +11,6 @@ function Provider({ children }) {
 
     const [canchas, setCanchas] = useState(null);
 
-    useEffect(() => {
-        fetch("")
-            .then((response) => response.json())
-            .then((dog) => {
-                setCanchas(BASE_URL);
-            });
-    }, [])
 
     const state = {
         users,
