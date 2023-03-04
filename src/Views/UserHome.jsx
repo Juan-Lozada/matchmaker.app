@@ -7,6 +7,7 @@ export default function UserHome() {
     <div id="perfil" className="bg-light vh-100">
       <ProvAsidePerfil />
       <UserDashboard />
+      <FooterComponent/>
     </div>
   );
 }

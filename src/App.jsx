@@ -15,8 +15,10 @@ import TenantProfileView from "./Views/TenantProfileView";
 import TenantHome from "./Views/TenantHome";
 import UserProfile from "./Views/UserProfile";
 import UserHome from "./Views/UserHome";
-import Nvbar from "./Components/Navbar";
-import FooterComponent from "./Components/Footer";
+
+
+
+
 
 const { Provider } = Context;
 
@@ -26,17 +28,16 @@ function App() {
       <Provider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/logout" element={<LandingPage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/user/canchas" element={<UserCanchas />} />
-            <Route path="/user/profile" element={<UserProfile />} />
-            <Route path="/user/dashboard" element={<UserHome />} />
-            <Route path="/tenant/profile" element={<TenantProfileView />} />
-            <Route path="/tenant/dashboard" element={<TenantHome />} />
+              <Route index element={<LandingPage />} />
+              <Route path="/logout" element={<LandingPage />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/user/canchas" element={<UserCanchas />} />
+              <Route path="/user/profile" element={<UserProfile />} />
+              <Route path="/user/dashboard" element={<UserHome />} />
+              <Route path="/tenant/profile" element={<TenantProfileView />} />
+              <Route path="/tenant/dashboard" element={<TenantHome />} />
           </Routes>
-          <FooterComponent />
         </BrowserRouter>
 
       </Provider>
