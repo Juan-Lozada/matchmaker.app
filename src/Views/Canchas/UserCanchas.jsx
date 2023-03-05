@@ -1,10 +1,13 @@
-import Canchas from "../../Components/Canchas"
-import AsideMenuPerfil from "../../Components/ProvAsidePrefil"
 
-export default function Tienda() {
+import CanchasList from "../../Components/Canchas";
+import ProvAsidePerfil from '../../Components/ProvAsidePerfil'
+
+
+export default function UserCanchas() {
   return (
-    <div id="tienda" className="bg-light vh-100">
-      <AsideMenuPerfil/>
+    <div id="cancha">
+      <ProvAsidePerfil/>
+      <CanchasList/>
     </div>
   );
 }

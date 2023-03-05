@@ -16,12 +16,15 @@
     "express": "latest",
     "force": "latest",
     "mdb-react-ui-kit": "latest",
+    "mdb-ui-kit": "^6.2.0",
     "react": "latest",
     "react-background-slider": "latest",
     "react-bootstrap": "latest",
     "react-dom": "latest",
+    "react-icons": "^4.7.1",
     "react-router-dom": "latest",
     "react-scripts": "latest",
+    "react-select": "^5.7.0",
     "swiper": "latest"
   },
   "devDependencies": {

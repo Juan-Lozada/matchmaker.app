@@ -12,13 +12,14 @@ export default function PerfilUser() {
 
   const [user, setUser] = useState({});
 
-  const actualizarInfo = () => {
-    const { user_id } = session;
-    const userIndex = users.findIndex((u) => u.user_id === user_id);
-    users[userIndex] = user;
-    setUsers([...users]);
-    alert("Se han actualizado tus datos correctamente");
+
+  const actInfo = () => {
+    setUsers([...users, user]);
+    alert("Datos actualizados correctamente!");
+    navigate("/user/profile");
   };
+
+
 
   return (
     <div className="bg-light vh-100 pt-5">
@@ -29,7 +30,7 @@ export default function PerfilUser() {
         </div>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label>Email address</Form.Label>
-          <MDBInput disabled wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg"
+          <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg"
             onChange={({ target }) => setUser({ ...user, ["email"]: target.value })} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -44,7 +45,7 @@ export default function PerfilUser() {
           />
         </Form.Group>
 
-        <Button variant="warning me-3" onClick={actualizarInfo}>
+        <Button variant="warning me-3" onClick={actInfo}>
           Actualizar
         </Button>
       </Form>

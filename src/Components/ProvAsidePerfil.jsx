@@ -1,23 +1,50 @@
-import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
+import React, { useState } from "react";
+import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
 
-export default function AsideMenuPerfil() {
+import { IconContext } from "react-icons";
+import { Link } from "react-router-dom";
+import { FaBeer } from 'react-icons/fa';
+
+import { SidebarData } from "../API/sidebarData";
+import '../styles/sidebar.css';
+
+export default function ProvAsidePerfil() {
+  const [sidebar, setSidebar] = useState(false);
+
+  const showSidebar = () => setSidebar(!sidebar);
+
   return (
-    <aside className="bg-warning text-center">
-      <div>
-        <Link to="/perfil" className="text-dark text-decoration-none">
-          <h5 className="mb-3">Mis datos</h5>
-        </Link>
-        <Link to="/mispublicaciones" className="text-dark text-decoration-none">
-          <h5 className="mb-3">Mis publicaciones</h5>
-        </Link>
-        <Link to="/misfavoritos" className="text-dark text-decoration-none">
-          <h5 className="mb-5">Mis Favoritos</h5>
-        </Link>
-        <Link to="/tienda">
-          <Button variant="light">Volver a la tienda 🛒</Button>
-        </Link>
-      </div>
-    </aside>
+    <>
+      <IconContext.Provider value={{ color: "#FFF" }}>
+        {/* All the icons now are white */}
+        <div className="navbar">
+          <Link to="#" className="menu-bars">
+            <FaIcons.FaBars onClick={showSidebar} />
+          </Link>
+        </div>
+        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+          <ul className="nav-menu-items" onClick={showSidebar}>
+            <li className="navbar-toggle">
+              <Link to="#" className="menu-bars">
+                <AiIcons.AiOutlineClose />
+              </Link>
+            </li>
+
+            {SidebarData.map((item, index) => {
+              return (
+                <li key={index} className={item.cName}>
+                  <Link to={item.path}>
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </IconContext.Provider>
+    </>
   );
 }
+

@@ -1,12 +1,15 @@
-import Navbar from "../Components/Navbar";
-import Header from "../Components/Header";
+
 import FooterComponent from "../Components/Footer";
+import Header from "../Components/Header";
+
 
 export default function Home() {
   return (
     <>
+      <div className="layout"></div>
       <Header />
-      <FooterComponent/>
+      <FooterComponent />
     </>
+
   );
 }

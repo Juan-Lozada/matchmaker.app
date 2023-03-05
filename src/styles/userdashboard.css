@@ -1,0 +1,11 @@
+html,
+body {
+  margin: 0px;
+  
+}
+
+.card-profile {
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+}

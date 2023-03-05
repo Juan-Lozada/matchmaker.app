@@ -1,18 +1,18 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
-export default function Cancha({
-  Cancha: { name, deporte, img, price, ubicacion }
-}) {
+import  * as BsIcons from "react-icons/bs";
+
+export default function Cancha({ cancha }) {
   return (
-    <Card className="p-3">
-      <Card.Img variant="top" src={img} />
+    <Card className="canchas-card d-flex flex-column justify-content-center p-3">
+      <Card.Img className="cancha-img" variant="top" src={cancha.img}/>
       <Card.Body>
-        <Card.Title>{name}</Card.Title>
-        <Card.Text className="fw-bold">{deporte}</Card.Text>
-        <Card.Text>Precio: {price}</Card.Text>
-        <Card.Text>{ubicacion}</Card.Text>
-        <Button variant="secondary">♥</Button>
+        <Card.Title>{cancha.name}</Card.Title>
+        <Card.Text className="fw-bold">{cancha.deporte}</Card.Text>
+        <Card.Text>Precio: {cancha.price} $</Card.Text>
+        <Card.Text>Ubicacion:   {cancha.ubicacion}   <BsIcons.BsFillPinMapFill/></Card.Text>
+        <Button type="button" className="btn btn-primary bg-light"  data-mdb-ripple-color="dark">Arrendar </Button>
       </Card.Body>
     </Card>
   );
