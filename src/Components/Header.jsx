@@ -8,7 +8,7 @@ import Matchmakerlogo from '../img/Matchmakerlogo.png'
 
 const Header = () => {
   return (
-    <div className='background pt-5'>
+    <div className='background pt-3'>
       <div className="intro-logo jumbo-bg align-center " style={{ backdropFilter: 'blur(1vh)', height: '100vh' }}>
         <Container className='align-center justify-content-center pb-5' style={{ background: 'hsla(0, 0%, 100%, 0.55)',  backdropFilter: 'blur(30px)', borderRadius:'50px'}}>
           <img src={Matchmakerlogo} style={{ width: '60vh', height: '60vh' }} />
@@ -27,4 +27,5 @@ const Header = () => {
   )
 }
 
+document.body.style.overflow = "hidden"
 export default Header

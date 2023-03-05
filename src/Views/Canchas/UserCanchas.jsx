@@ -1,13 +1,13 @@
 
-import FooterComponent from "../../Components/Footer";
-import ProvAsidePerfil from "../../components/ProvAsidePerfil";
+import CanchasList from "../../Components/Canchas";
+import ProvAsidePerfil from '../../Components/ProvAsidePerfil'
 
 
 export default function UserCanchas() {
   return (
-    <div id="tienda" className="bg-light vh-100">
+    <div id="cancha">
       <ProvAsidePerfil/>
-      <FooterComponent/>
+      <CanchasList/>
     </div>
   );
 }

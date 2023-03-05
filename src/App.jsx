@@ -15,16 +15,14 @@ import TenantProfileView from "./Views/TenantProfileView";
 import TenantHome from "./Views/TenantHome";
 import UserProfile from "./Views/UserProfile";
 import UserHome from "./Views/UserHome";
-
-
-
+import FooterComponent from "./Components/Footer";
 
 
 const { Provider } = Context;
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <Provider>
         <BrowserRouter>
           <Routes>
@@ -38,6 +36,7 @@ function App() {
               <Route path="/tenant/profile" element={<TenantProfileView />} />
               <Route path="/tenant/dashboard" element={<TenantHome />} />
           </Routes>
+          <FooterComponent/>
         </BrowserRouter>
 
       </Provider>

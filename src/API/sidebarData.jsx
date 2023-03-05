@@ -2,26 +2,34 @@ import React from "react";
 
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-import * as IoIcons from "react-icons/io";
+import * as TbIcons from "react-icons/tb";
+import * as VscIcons from "react-icons/vsc";
+import  * as GiIcons from "react-icons/gi";
 
 export const SidebarData = [
   
   {
     title: "Dashboard",
-    path: "/user/Profile",
+    path: "/user/dashboard",
     icon: <AiIcons.AiFillHome />,
+    cName: "nav-text"
+  },
+  {
+    title: "Profile",
+    path: "/user/profile",
+    icon: <VscIcons.VscAccount/>,
     cName: "nav-text"
   },
   {
     title: "Canchas",
     path: "/user/canchas",
-    icon: <IoIcons.IoIosPaper />,
+    icon: <GiIcons.GiAbstract042 />,
     cName: "nav-text"
   },
   {
     title: "Logout",
     path: "/",
-    icon: <FaIcons.FaCartPlus />,
+    icon: <TbIcons.TbLogout />,
     cName: "nav-text"
   }
 ];
