@@ -1,78 +1,71 @@
-import { Link, useNavigate } from "react-router-dom";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import Container from "react-bootstrap/Container";
-import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import "../styles/TenatProfile.css";
+import Button from "react-bootstrap/Button";
+import { MDBCol, MDBInput, MDBRow } from "mdb-react-ui-kit";
+
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+
 import { useContext, useState } from "react";
+
+import '../styles/tenantDashboard.css';
 
 import ContextOrigin from "../Context";
 const { Context } = ContextOrigin;
 
-export default function TenantProfile() {
-  const navigate = useNavigate();
+export default function PerfilUser() {
+  const { tenants, setTenants, session } = useContext(Context);
+
+  const [tenant, setTenant] = useState({});
+
+
+  const actInfo = () => {
+    setTenant([...tenants, tenant]);
+    alert("Datos actualizados correctamente!");
+    navigate("/tenant/profile");
+  };
+
+
 
   return (
-    <>
-      <Row>
-        <Col>
-          <Card className="card-profile">
-            <Card.Header className="text-start" as="h5">
-              Datos de Perfil
-            </Card.Header>
-            <Card.Body>
-              <Form>
-                <Row>
-                  <Col sm={6}>
-                    <Form.Group className="mb-3" controlId="formBasicText">
-                      <Form.Label className="text-start text-label">
-                        Nombre
-                      </Form.Label>
-                      <Form.Control type="text" placeholder="Nombre" />
-                    </Form.Group>
-                  </Col>
-                  <Col sm={6}>
-                    <Form.Group className="mb-3" controlId="formBasicText">
-                      <Form.Label className="text-start text-label">
-                        Apellido Paterno
-                      </Form.Label>
-                      <Form.Control
-                        type="text"
-                        placeholder="Apellido Paterno"
-                      />
-                    </Form.Group>
-                  </Col>
-                  <Col sm={6}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                      <Form.Label className="text-start text-label">
-                        Email
-                      </Form.Label>
-                      <Form.Control type="email" placeholder="Email" />
-                    </Form.Group>
-                  </Col>
-                  <Col sm={6}>
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <Form.Label className="text-start text-label">
-                        Teléfono
-                      </Form.Label>
-                      <Form.Control type="text" placeholder="Teléfono" />
-                    </Form.Group>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col sm={6}>
-                    <Button className="btn-actualizar" type="submit">
-                      Actualizar Datos
-                    </Button>
-                  </Col>
-                </Row>
-              </Form>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </>
+    <div className="bg-light vh-100 ">
+      <Form className=" form w-50 mx-auto border p-3 rounded  text-white ">
+        <div>
+          <h4>Datos de Perfil</h4>
+          <hr />
+        </div>
+        <Form.Group className="mb-3" controlId="Tenant-Email">
+          <Form.Label>Email address</Form.Label>
+          <MDBInput wrapperClass='mb-4' label='Email address' id='tenantEmailInput' type='email' size="lg"
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="Tenant-address">
+          <Form.Label>Dirección</Form.Label>
+          <MDBInput wrapperClass='mb-4' label='Dirección' id='tenantAddressInput' type='text' size="lg"
+          />
+        </Form.Group>
+        <MDBRow>
+          <MDBCol col='4'>
+            <Form.Group className="mb-3" controlId="Tenant-Phone" id="tenantPasswordInput">
+              <Form.Label>Numero de telefono</Form.Label>
+              <PhoneInput
+                country={'cl'}
+                default
+
+              />
+            </Form.Group>
+          </MDBCol>
+          <MDBCol col='8'>
+            <Form.Group className="mb-3" controlId="Tenant-Password">
+              <Form.Label>Password</Form.Label>
+              <MDBInput wrapperClass='mb-4' label='Password' id='tenantPasswordInput' type='password' size="lg"
+              />
+            </Form.Group>
+          </MDBCol>
+        </MDBRow>
+        <Button variant="mb-4 px-5" onClick={actInfo}>
+          Actualizar
+        </Button>
+      </Form>
+    </div >
   );
 }

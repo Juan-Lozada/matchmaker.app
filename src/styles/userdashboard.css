@@ -1,11 +1,7 @@
-html,
-body {
-  margin: 0px;
-  
+.card-profile {
+  background-color: #122953;
 }
 
-.card-profile {
-  display: flex;
-  justify-content: center;
-  height: 50vh;
+.form-outline .form-control{
+  background-color: white;
 }

@@ -7,6 +7,8 @@ function Provider({ children }) {
     const BASE_URL = "https://api.npoint.io/259dd18e1698198203b3"
 
     const [users, setUsers] = useState([]);
+    const [tenants, setTenants] = useState([]);
+    
     const [session, setSession] = useState(null);
 
     const [canchas, setCanchas] = useState(null);
@@ -21,6 +23,8 @@ function Provider({ children }) {
     const state = {
         users,
         setUsers,
+        tenants,
+        setTenants,
         session,
         setSession,
         canchas,
