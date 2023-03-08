@@ -163,7 +163,7 @@ export default function Register() {
             </MDBCol>
 
             <MDBCol col=''>
-              <Image className='register-img' src="https://halliday-v2.s3.amazonaws.com/uploads/sites/12/2022/11/Glasgow-Green-3-Halliday-Lighting-scaled.jpg" class="rounded-4 shadow-4" style={{ height: '100%', width: '100vh' }}
+              <Image className='register-img rounded-4 shadow-4' src="https://halliday-v2.s3.amazonaws.com/uploads/sites/12/2022/11/Glasgow-Green-3-Halliday-Lighting-scaled.jpg"  style={{ height: '100%', width: '100vh' }}
                 alt="" fluid />
             </MDBCol>
 

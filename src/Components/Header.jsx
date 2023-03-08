@@ -15,10 +15,10 @@ const Header = () => {
           <h3>Conectate a la comunidad deportiva y haz match en tu cancha favorita.</h3>
           <Container className='d-flex gap-5 justify-content-center'>
             <NavLink to='/Login' style={{ textDecoration: 'none', Color: "#BAD7E9" }} className='col-3' >
-              <button type="button" class="btn btn-primary btn-lg btn-block " data-mdb-ripple-color="dark">Login</button>
+              <button type="button" className="btn btn-primary btn-lg btn-block " data-mdb-ripple-color="dark">Login</button>
             </NavLink>
             <NavLink to='/register' style={{ textDecoration: 'none', Color: "#BAD7E9" }} className='col-3' >
-              <button type="button" class="btn btn-primary btn-lg btn-block " data-mdb-ripple-color="dark">Register</button>
+              <button type="button" className="btn btn-primary btn-lg btn-block " data-mdb-ripple-color="dark">Register</button>
             </NavLink>
           </Container>
         </Container>
