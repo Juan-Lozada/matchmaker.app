@@ -10,13 +10,12 @@ import Context from "./Context";
 import Login from "./Views/Login";
 import Register from "./Views/Register";
 
-import UserCanchas from "./Components/Canchas";
-import TenantProfileView from "./Views/TenantProfileView";
-import TenantHome from "./Views/TenantHome";
 import UserProfile from "./Views/UserProfile";
 import UserHome from "./Views/UserHome";
-import FooterComponent from "./Components/Footer";
 import TenantProfile from "./Components/TenantProfile";
+import TenantHome from "./Views/TenantHome";
+import UserCanchas from "./Components/Canchas";
+import FooterComponent from "./Components/Footer";
 
 
 const { Provider } = Context;
