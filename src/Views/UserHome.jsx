@@ -1,4 +1,4 @@
-import ProvAsidePerfil from "../components//ProvAsidePerfil"
+import ProvAsidePerfil from "../components/ProvAsidePerfil"
 import FooterComponent from "../Components/Footer";
 import UserDashboard from "../Components/UserDashboard";
 
