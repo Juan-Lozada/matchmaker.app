@@ -4,29 +4,29 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import FormCanchas from "./FormCanchas";
-import Table from "react-bootstrap/Table";
 import "../styles/TenatProfile.css";
 import { useContext, useState } from "react";
 
 import ContextOrigin from "../Context";
+import { Container } from "react-bootstrap";
 const { Context } = ContextOrigin;
 
 export default function TenantProfile() {
   const navigate = useNavigate();
- let sinCanchas = true;
-//   const cambioEstado = () => {
-   
-//    sinCanchas = false;
-//    console.log(sinCanchas)
-   
-//   };
+  let sinCanchas = true;
+  //   const cambioEstado = () => {
+
+  //    sinCanchas = false;
+  //    console.log(sinCanchas)
+
+  //   };
   return (
-    <>
-      <Row>
+    <div className="tenant-profile p-5">
+      <Row className="justify-content-center p-5">
         {sinCanchas ? (
-          <Col sm={12}>
-            <Card className="card-mensaje">
-              <Card.Body>
+          <Col sm={6}>
+            <Card className="card-mensaje ">
+              <Card.Body className="card-body justify-content-center d-flex flex-column">
                 <h3>Bienvenido Usuario</h3>
                 <p>
                   No tiene canchas asociadas a tu cuenta. Registra tu cancha
@@ -34,7 +34,7 @@ export default function TenantProfile() {
                 </p>
                 <Button
                   className="btn-actualizar"
-                 
+
                 >
                   Registrar Cancha
                 </Button>
@@ -47,6 +47,6 @@ export default function TenantProfile() {
           </Col>
         )}
       </Row>
-    </>
+    </div>
   );
 }

@@ -4,7 +4,6 @@ import * as AiIcons from "react-icons/ai";
 
 import { IconContext } from "react-icons";
 import { Link } from "react-router-dom";
-import { FaBeer } from 'react-icons/fa';
 
 import { SidebarData } from "../API/sidebarData";
 import '../styles/sidebar.css';
@@ -17,7 +16,6 @@ export default function ProvAsidePerfil() {
   return (
     <>
       <IconContext.Provider value={{ color: "#FFF" }}>
-        {/* All the icons now are white */}
         <div className="navbar">
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />

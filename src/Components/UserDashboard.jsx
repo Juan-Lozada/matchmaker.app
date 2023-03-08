@@ -9,8 +9,6 @@ import ContextOrigin from "../Context";
 const { Context } = ContextOrigin;
 
 
-//import "../styles/TenatProfile.css";
-
 import '../styles/userdashboard.css';
 import { Container } from "react-bootstrap";
 
@@ -21,7 +19,7 @@ export default function UserDashboard() {
       <Row>
         <Col >
           <Card className="card-profile">
-            <Card.Header className="text-start" as="h5">
+            <Card.Header className="text-start text-light" as="h5">
               Datos de Perfil
             </Card.Header>
             <Card.Body>
@@ -29,7 +27,7 @@ export default function UserDashboard() {
                 <Row>
                   <Col sm={6}>
                     <Form.Group className="mb-3" controlId="formBasicText">
-                      <Form.Label className="text-start text-label">
+                      <Form.Label className="text-start text-label text-light">
                         Nombre
                       </Form.Label>
                       <Form.Control type="text" placeholder="Nombre" />
@@ -37,7 +35,7 @@ export default function UserDashboard() {
                   </Col>
                   <Col sm={6}>
                     <Form.Group className="mb-3" controlId="formBasicText">
-                      <Form.Label className="text-start text-label">
+                      <Form.Label className="text-start text-label text-light">
                         Apellido Paterno
                       </Form.Label>
                       <Form.Control
@@ -48,7 +46,7 @@ export default function UserDashboard() {
                   </Col>
                   <Col sm={6}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                      <Form.Label className="text-start text-label">
+                      <Form.Label className="text-start text-label text-light">
                         Email
                       </Form.Label>
                       <Form.Control type="email" placeholder="Email" />
@@ -56,7 +54,7 @@ export default function UserDashboard() {
                   </Col>
                   <Col sm={6}>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <Form.Label className="text-start text-label">
+                      <Form.Label className="text-start text-label text-light">
                         Teléfono
                       </Form.Label>
                       <Form.Control type="text" placeholder="Teléfono" />
@@ -65,7 +63,7 @@ export default function UserDashboard() {
                 </Row>
                 <Row>
                   <Col sm={12} className="d-flex justify-content-center pt-4">
-                    <Button className="btn-actualizar" type="submit">
+                    <Button className="btn-actualizar text-light" type="submit">
                       Actualizar Datos
                     </Button>
                   </Col>

@@ -5,8 +5,8 @@ import TenantDashboard from "../Components/TenantDashboard";
 export default function TenantHome() {
   return (
     <div id="perfil">
-      <TenantDashboard />
       <ProvAsidePerfil/>
+      <TenantDashboard />
       <FooterComponent/>
     </div>
   );

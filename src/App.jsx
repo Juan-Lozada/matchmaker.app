@@ -16,6 +16,7 @@ import TenantHome from "./Views/TenantHome";
 import UserProfile from "./Views/UserProfile";
 import UserHome from "./Views/UserHome";
 import FooterComponent from "./Components/Footer";
+import TenantProfile from "./Components/TenantProfile";
 
 
 const { Provider } = Context;
@@ -33,12 +34,11 @@ function App() {
               <Route path="/user/canchas" element={<UserCanchas />} />
               <Route path="/user/profile" element={<UserProfile />} />
               <Route path="/user/dashboard" element={<UserHome />} />
-              <Route path="/tenant/profile" element={<TenantProfileView />} />
+              <Route path="/tenant/profile" element={<TenantProfile/>} />
               <Route path="/tenant/dashboard" element={<TenantHome />} />
           </Routes>
           <FooterComponent/>
         </BrowserRouter>
-
       </Provider>
     </div>
   )
