@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { SidebarData } from "../API/sidebarData";
 import '../styles/sidebar.css';
 
-export default function provAsidePerfil() {
+export default function ProvAsidePerfil() {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);

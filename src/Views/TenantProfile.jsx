@@ -1,11 +1,11 @@
-import {FooterComponent} from "../Components/Footer";
-import {provAsidePerfil} from "../components/ProvAsidePerfil";
-import {TenantProfile} from "../Components/TenantProfile";
+import FooterComponent from "../Components/Footer";
+import ProvAsidePerfil from "../components/ProvAsidePerfil";
+import TenantProfile from "../Components/TenantProfile";
 
 export default function TenantHome() {
   return (
     <div id="perfil">
-      <provAsidePerfil/>
+      <ProvAsidePerfil/>
       <TenantProfile/>
       <FooterComponent/>
     </div>
