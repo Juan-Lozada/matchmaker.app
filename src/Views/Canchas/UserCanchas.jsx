@@ -1,6 +1,6 @@
 
-import CanchasList from "../../Components/Canchas";
-import ProvAsidePerfil from '../../Components/ProvAsidePerfil'
+import {CanchasList} from "../../Components/Canchas";
+import {ProvAsidePerfil} from '../../Components/ProvAsidePerfil'
 
 
 export default function UserCanchas() {

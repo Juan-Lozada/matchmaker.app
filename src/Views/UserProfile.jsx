@@ -1,6 +1,6 @@
-import ProvAsidePerfil from "../components/ProvAsidePerfil"
-import FooterComponent from "../Components/Footer";
-import PerfilUser from "../Components/Perfil";
+import {ProvAsidePerfil} from "../components/ProvAsidePerfil"
+import {FooterComponent} from "../Components/Footer";
+import {PerfilUser} from "../Components/Perfil";
 
 export default function UserProfile() {
 
