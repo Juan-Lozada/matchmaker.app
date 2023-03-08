@@ -4,7 +4,6 @@
 
 
   import '../styles/register.css';
-
   import {
     MDBBtn,
     MDBContainer,
