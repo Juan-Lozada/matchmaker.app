@@ -1,11 +1,11 @@
 import FooterComponent from "../Components/Footer";
-import ProvAsidePerfil from "../components/ProvAsidePerfil.jsx";
+import SidebarComponent from "../Components/SidebarComponent";
 import TenantProfile from "../Components/TenantProfile";
 
 export default function TenantProfileView() {
   return (
     <div id="perfil">
-      <TenantProfile />
+      <SidebarComponent/>
       <ProvAsidePerfil/>
       <FooterComponent/>
     </div>

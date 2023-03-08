@@ -1,12 +1,12 @@
-import ProvAsidePerfil from "../Components/ProvAsidePerfil.jsx"
 import FooterComponent from "../Components/Footer";
 import PerfilUser from "../Components/Perfil";
+import SidebarComponent from "../Components/SidebarComponent.jsx";
 
 export default function UserProfile() {
 
   return (
     <div id="perfil" className="bg-light vh-100">
-      <ProvAsidePerfil />
+      <SidebarComponent/>
       <PerfilUser />
       <FooterComponent />
     </div>

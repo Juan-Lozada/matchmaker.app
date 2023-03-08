@@ -1,12 +1,12 @@
 
-import {CanchasList} from "../../Components/Canchas";
-import {ProvAsidePerfil} from '../../Components/ProvAsidePerfil'
+import CanchasList from "../../Components/Canchas";
+import SidebarComponent from "../../Components/SidebarComponent";
 
 
 export default function UserCanchas() {
   return (
     <div id="cancha">
-      <ProvAsidePerfil/>
+      <SidebarComponent/>
       <CanchasList/>
     </div>
   );
