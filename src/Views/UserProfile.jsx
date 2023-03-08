@@ -1,5 +1,5 @@
 import FooterComponent from "../Components/Footer";
-import PerfilUser from "../Components/Perfil";
+import PerfilUser from "../Components/PerfilUser";
 import SidebarComponent from "../Components/SidebarComponent.jsx";
 
 export default function UserProfile() {
