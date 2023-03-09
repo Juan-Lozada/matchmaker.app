@@ -2,8 +2,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { MDBCol, MDBInput, MDBRow } from "mdb-react-ui-kit";
 
-import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/style.css'
+// import PhoneInput from 'react-phone-input-2'
+// import 'react-phone-input-2/lib/style.css'
 
 import { useContext, useState } from "react";
 
@@ -47,11 +47,7 @@ export default function PerfilUser() {
           <MDBCol col='4'>
             <Form.Group className="mb-3" controlId="Tenant-Phone" id="tenantPasswordInput">
               <Form.Label>Numero de telefono</Form.Label>
-              <PhoneInput
-                country={'cl'}
-                default
 
-              />
             </Form.Group>
           </MDBCol>
           <MDBCol col='8'>

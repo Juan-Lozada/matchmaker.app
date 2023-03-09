@@ -4,8 +4,8 @@ import { MDBCol, MDBInput, MDBRow } from "mdb-react-ui-kit";
 
 import { Navigate } from "react-router-dom";
 
-import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/style.css'
+//import PhoneInput from 'react-phone-input-2'
+//import 'react-phone-input-2/lib/style.css'
 
 import '../styles/userProfile.css';
 
@@ -51,11 +51,7 @@ export default function PerfilUser() {
             <MDBCol col='6' className="text-dark">
               <Form.Group className="mb-3" controlId="Tenant-Phone" id="userPhoneInput">
                 <Form.Label className="text-light">Numero de telefono</Form.Label>
-                <PhoneInput
-                  country={'cl'}
-                  international
 
-                />
               </Form.Group>
             </MDBCol>
             <MDBCol col='6'>
