@@ -1,14 +1,14 @@
 
-import FooterComponent from "../Components/Footer";
+// import FooterComponent from "../Components/Footer";
 import Header from "../Components/Header";
 
 
 export default function Home() {
   return (
     <>
-      <div className="layout"></div>
+      <div></div>
       <Header />
-      <FooterComponent />
+      {/* <FooterComponent /> */}
     </>
 
   );
