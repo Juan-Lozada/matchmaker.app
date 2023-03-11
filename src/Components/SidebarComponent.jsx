@@ -1,34 +1,31 @@
 import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-
 import { IconContext } from "react-icons";
 import { Link } from "react-router-dom";
-
 import { SidebarData } from "../API/sidebarData";
-import '../styles/sidebar.css';
+import "../styles/sidebar.css";
 
 export default function SidebarComponent() {
-  const [sidebar, setSidebar] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const showSidebar = () => setSidebar(!sidebar);
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
   return (
     <>
       <IconContext.Provider value={{ color: "#FFF" }}>
         <div className="navbar">
-          <Link to="#" className="menu-bars">
-            <FaIcons.FaBars onClick={showSidebar} />
+          <Link to="#" className="menu-bars" style={{ display: sidebarOpen ? 'none' : 'block' }}>
+            <FaIcons.FaBars onClick={toggleSidebar} />
           </Link>
         </div>
-        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
-          <ul className="nav-menu-items" onClick={showSidebar}>
+        <nav className={sidebarOpen ? "nav-menu active" : "nav-menu"}>
+          <ul className="nav-menu-items">
             <li className="navbar-toggle">
-              <Link to="#" className="menu-bars">
+              <Link to="#" className="menu-bars" onClick={toggleSidebar}>
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>
-
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
@@ -41,8 +38,10 @@ export default function SidebarComponent() {
             })}
           </ul>
         </nav>
+        <div className={sidebarOpen ? 'menu-icon' : ''} onClick={toggleSidebar}>
+          <AiIcons.AiOutlineClose />
+        </div>
       </IconContext.Provider>
     </>
   );
 }
-

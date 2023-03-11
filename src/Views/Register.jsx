@@ -88,7 +88,7 @@ export default function Register() {
                           <MDBInput
                             wrapperClass='mb-4'
                             label='Nombre'
-                            id='form1'
+                            id='register-name'
                             type='text' />
                         </MDBCol>
 
@@ -96,7 +96,7 @@ export default function Register() {
                           <MDBInput
                             wrapperClass='mb-4'
                             label='Apellido'
-                            id='form2'
+                            id='register-lastname'
                             type='text' />
                         </MDBCol>
                       </MDBRow>
@@ -104,7 +104,7 @@ export default function Register() {
                         <MDBCol>
                           <MDBInput md='6'
                             type="text"
-                            id="rut"
+                            id="register-rut"
                             label="RUT"
                             value={rutRawValue}
                             onChange={handleRutChange}
@@ -117,13 +117,14 @@ export default function Register() {
                           <MDBInput md='6'
                             wrapperClass='mb-4'
                             label='Telefono'
-                            id='form6'
+                            id='register-telefono'
                             type='text'
-                            onChange={({ target }) => setUser({ ...user, ["password"]: target.value })
+                            onChange={({ target }) => setUser({ ...user, ["telefono"]: target.value })
                             } />
                         </MDBCol>
                       </MDBRow>
                       <Select
+                        id='register-comuna'
                         className='pb-2'
                         defaultValue={selectedOption}
                         onChange={setSelectedOption}
@@ -138,7 +139,7 @@ export default function Register() {
                             md='6'
                             wrapperClass='mb-4'
                             label='Correo electrónico'
-                            id='form3'
+                            id='register-email'
                             type='email'
                             onChange={({ target }) => setUser({ ...user, ["email"]: target.value })
                             } />
@@ -146,6 +147,7 @@ export default function Register() {
                       </MDBRow>
 
                       <Select
+                        id='register-userType'
                         className='pb-2'
                         defaultValue={selectedOption}
                         onChange={setSelectedOption}
@@ -163,7 +165,7 @@ export default function Register() {
             </MDBCol>
 
             <MDBCol col=''>
-              <Image className='register-img rounded-4 shadow-4' src="https://halliday-v2.s3.amazonaws.com/uploads/sites/12/2022/11/Glasgow-Green-3-Halliday-Lighting-scaled.jpg"  style={{ height: '100%', width: '100vh' }}
+              <Image className='register-img rounded-4 shadow-4' src="https://halliday-v2.s3.amazonaws.com/uploads/sites/12/2022/11/Glasgow-Green-3-Halliday-Lighting-scaled.jpg" style={{ height: '100%', width: '100vh' }}
                 alt="" fluid />
             </MDBCol>
 

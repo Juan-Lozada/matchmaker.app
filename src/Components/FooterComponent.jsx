@@ -10,7 +10,7 @@ import Matchmakerlogo from '../img/logoTransparente.png'
   return (
       <>
           <footer className="page-footer font-small  pt-2 "   >
-              <Container className='d-flex flex-column justify-content-center text-light' style={{ color: "#122953" }} >
+              <Container className='d-flex flex-column justify-content-center text-light pt-5' style={{ color: "#122953" }} >
                   <div className="container-fluid text-center text-md-left">
                       <div className="row">
                           <div className="col-md-12 mt-md-0 mt-3">

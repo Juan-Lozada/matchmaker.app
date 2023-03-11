@@ -45,15 +45,15 @@ export default function Login() {
     };
     return (
 
-        <Container className='px-5 mt-0' >
-            <MDBContainer className='login px-4 pt-0 justify-content-center' style={{ borderRadius: '25px' }} >
+        <Container className='login px-5 mt-0' style={{ borderRadius: '25px' }}>
+            <MDBContainer className=' px-4 pt-0 justify-content-center'  >
 
                 <MDBCard className=' my-2 cascading-left' style={{ background: 'hsla(0, 0%, 100%, 0.55)', backdropFilter: 'blur(30px)', height: '80vh' }}>
                     <MDBRow className=' g-0'>
 
                         <MDBCol  >
                             <img src="https://w-wa.co.uk/wp-content/uploads/2021/04/Wynne-Williams_associates_landscape_architects_essex_MUGA_design_drone_shot.jpg"
-                                alt="Login image" className="w-100" style={{ height: '80vh', width: '100%' }} />
+                                alt="Login-image" className="w-100" style={{ height: '80vh', width: '100%' }} />
                         </MDBCol>
 
                         <MDBCol md='6' >

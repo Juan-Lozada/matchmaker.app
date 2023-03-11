@@ -26,7 +26,7 @@ export default function UserDashboard() {
               <Form className="d-flex flex-column justify-content-center">
                 <Row>
                   <Col sm={6}>
-                    <Form.Group className="mb-3" controlId="formBasicText">
+                    <Form.Group className="mb-3" controlId="user-name">
                       <Form.Label className="text-start text-label text-light">
                         Nombre
                       </Form.Label>
@@ -34,7 +34,7 @@ export default function UserDashboard() {
                     </Form.Group>
                   </Col>
                   <Col sm={6}>
-                    <Form.Group className="mb-3" controlId="formBasicText">
+                    <Form.Group className="mb-3" controlId="user-lastname">
                       <Form.Label className="text-start text-label text-light">
                         Apellido Paterno
                       </Form.Label>
@@ -45,7 +45,7 @@ export default function UserDashboard() {
                     </Form.Group>
                   </Col>
                   <Col sm={6}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Group className="mb-3" controlId="user-email">
                       <Form.Label className="text-start text-label text-light">
                         Email
                       </Form.Label>
@@ -53,7 +53,7 @@ export default function UserDashboard() {
                     </Form.Group>
                   </Col>
                   <Col sm={6}>
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Group className="mb-3" controlId="user-telefono">
                       <Form.Label className="text-start text-label text-light">
                         Teléfono
                       </Form.Label>

@@ -14,8 +14,8 @@ import UserProfile from "./Views/UserProfile";
 import UserHome from "./Views/UserHome";
 import TenantProfile from "./Components/TenantProfile";
 import TenantHome from "./Views/TenantHome";
-import UserCanchas from "./Components/Canchas";
-import FooterComponent from "./Components/Footer";
+import UserCanchas from "./Views/Canchas/UserCanchas";
+
 
 
 const { Provider } = Context;
@@ -36,7 +36,6 @@ function App() {
               <Route path="/tenant/profile" element={<TenantProfile/>} />
               <Route path="/tenant/dashboard" element={<TenantHome />} />
           </Routes>
-          <FooterComponent/>
         </BrowserRouter>
       </Provider>
     </div>
