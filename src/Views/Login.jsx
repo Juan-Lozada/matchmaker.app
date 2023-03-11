@@ -63,7 +63,8 @@ import {
 
             <MDBRow>
             <MDBCol>
-              <MDBInput 
+              <MDBInput
+                className="input-login" 
                 wrapperClass='mb-4' 
                 label='Email address' 
                 id='loginEmail' 
@@ -77,6 +78,7 @@ import {
           <MDBRow>
             <MDBCol>
               <MDBInput 
+                className="input-login" 
                 wrapperClass='mb-4' 
                 label='Password' 
                 id='loginPasword' 

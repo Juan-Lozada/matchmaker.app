@@ -3,7 +3,7 @@
     height: 75vh;
 }
   
-  .fondo-card {
+.fondo-card {
     background-color: #122953;
     justify-content: center;
     align-items: center;
@@ -12,20 +12,21 @@
     height: 70vh;
 }
   
-  .card {
+.card {
     background-color: #FFFFFF;
-    border-radius: 0 1em 1em 0;
+    border-radius: 0 1em 1em 0!important;
     align-items: center;
     width: 48%;
     height: 65vh;
 }
   
-  .card-img {
+.card-img {
     background-color: #122953;
 }
   
-  .img-register {
-    border-radius: 1em 0 0 1em;
+.img-register {
+    border-radius: 1em 0 0 1em!important;
+    height: 75vh!important;
 }
 
 .f-form {
@@ -44,7 +45,7 @@
     }
   
     .card {
-      border-radius: 1em;
+      border-radius: 1em!important;
       width: 90%;
     }
 

@@ -99,7 +99,8 @@ export default function Register() {
 
             <MDBRow>
               <MDBCol className="m-form">
-                <MDBInput 
+                <MDBInput
+                  className="input-login" 
                   wrapperClass='mb-2' 
                   label='Nombre' 
                   id='form1' 
@@ -112,6 +113,7 @@ export default function Register() {
             <MDBRow>
               <MDBCol>
                 <MDBInput 
+                  className="input-login"
                   wrapperClass='mb-2' 
                   label='Apellido' 
                   id='form2' 
@@ -127,6 +129,7 @@ export default function Register() {
             <MDBRow>
               <MDBCol className="m-form">
                 <MDBInput 
+                  className="input-login"
                   wrapperClass='mb-2' 
                   label='RUT' 
                   id='rut' 
@@ -135,7 +138,7 @@ export default function Register() {
                   value={rutRawValue}
                   onChange={handleRutChange}
                   placeholder="11111111-1"
-                  // maxLength={12}
+                  maxLength={12}
                   pattern="\d{1,2}\.\d{3}\.\d{3}-\d{1,2}"
                   title="El RUT debe tener el siguiente formato: xx.xxx.xxx-x"
                 />
@@ -145,6 +148,7 @@ export default function Register() {
             <MDBRow>
               <MDBCol>
                 <MDBInput 
+                  className="input-login"
                   wrapperClass='mb-2' 
                   label='Teléfono' 
                   id='form6' 
@@ -172,6 +176,7 @@ export default function Register() {
           <MDBRow>
             <MDBCol>
               <MDBInput 
+                className="input-login"
                 wrapperClass='mb-2' 
                 label='Correo electrónico' 
                 id='form3' 

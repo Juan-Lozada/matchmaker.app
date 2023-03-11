@@ -24,7 +24,7 @@ export default function Header () {
               <NavLink to='/Login' style={{ textDecoration: 'none', Color: "#BAD7E9" }}>
                 <button 
                   type="button" 
-                  className="btn btn-primary prueba" 
+                  className="btn btn-primary" 
                   data-mdb-ripple-color="dark">
                   Login
                 </button>
@@ -34,7 +34,7 @@ export default function Header () {
               <NavLink to='/register' style={{ textDecoration: 'none', Color: "#BAD7E9" }}>
                 <button 
                   type="button" 
-                  className="btn btn-primary prueba" 
+                  className="btn btn-primary" 
                   data-mdb-ripple-color="dark">
                   Register
                 </button>
