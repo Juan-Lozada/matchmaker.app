@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Cancha from "./Cancha";
+import SidebarComponent from "../Components/SidebarComponent.jsx";
 
 import '../styles/canchas.css';
 
@@ -14,6 +15,7 @@ export default function CanchasList() {
 
   return (
     <>
+      <SidebarComponent/>
       <div className="canchas-grid p-5">
         {canchas.map((cancha) => (
           <Cancha key={cancha.id} cancha={cancha} />

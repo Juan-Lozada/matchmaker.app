@@ -1,7 +1,29 @@
-.user-profile {
+/* .container-base {
+    background-color: #122953;
+    width: 100%; 
+    height: 75vh!important; 
+} */
+
+.form-base {
+    /* background-color: #FFFFFF!important; */
+    /* color: #6b7280!important; */
+    width: 95%!important;
+    
+}
+
+.form-label {
+    /* color: #6b7280!important; */
+}
+
+.btn-actua {
+    /* color: #6b7280!important; */
+}
+
+
+/* .user-profile {
     color: white;
 }
 
 .form-outline .form-control{
     background-color: currentColor;
-}
+} */
