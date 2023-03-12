@@ -173,7 +173,7 @@ export default function Register() {
 
         </MDBContainer>
       </Container>
-
+      <FooterComponent/>
     </>
 
   );
