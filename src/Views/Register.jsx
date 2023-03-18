@@ -12,8 +12,9 @@ import {
   MDBCard,
   MDBRow,
   MDBCol,
-  MDBInput }
-from 'mdb-react-ui-kit';
+  MDBInput
+}
+  from 'mdb-react-ui-kit';
 
 import '../styles/register.css';
 
@@ -24,6 +25,7 @@ import { useContext, useState } from "react";
 import ContextOrigin from "../Context";
 
 import ApiComunas from "../API/comunas.json"
+import Footer from '../Components/Footer';
 
 const { Context } = ContextOrigin;
 
@@ -70,149 +72,152 @@ export default function Register() {
   }, [ApiComunas]);
 
   return (
-    <MDBContainer className="d-flex">
-      <div className="fondo-card d-flex">
+    <>
+      <MDBContainer className="d-flex">
+        <div className="fondo-card d-flex">
 
-      <MDBCard className="card-img">
-          <img 
-            src="https://halliday-v2.s3.amazonaws.com/uploads/sites/12/2022/11/Glasgow-Green-3-Halliday-Lighting-scaled.jpg" 
-            alt="Login image" 
-            className="w-100 img-register" 
-            style={{ height: '600px', width: '1000px' }} 
-          />
-        </MDBCard>
+          <MDBCard className="card-img">
+            <img
+              src="https://halliday-v2.s3.amazonaws.com/uploads/sites/12/2022/11/Glasgow-Green-3-Halliday-Lighting-scaled.jpg"
+              alt="Login image"
+              className="w-100 img-register"
+              style={{ height: '600px', width: '1000px' }}
+            />
+          </MDBCard>
 
-        <MDBCard>          
-          <MDBRow>
-            <MDBCol>
-              <img src={Matchmakerlogo} />
-            </MDBCol>
-          </MDBRow>
-
-          <MDBRow>
-            <MDBCol>
-              <p>Registrar una cuenta</p>
-            </MDBCol>
-          </MDBRow>
-
-          <div className="f-form">
+          <MDBCard>
+            <MDBRow>
+              <MDBCol>
+                <img src={Matchmakerlogo} />
+              </MDBCol>
+            </MDBRow>
 
             <MDBRow>
-              <MDBCol className="m-form">
+              <MDBCol>
+                <p>Registrar una cuenta</p>
+              </MDBCol>
+            </MDBRow>
+
+            <div className="f-form">
+
+              <MDBRow>
+                <MDBCol className="m-form">
+                  <MDBInput
+                    className="input-login"
+                    wrapperClass='mb-2'
+                    label='Nombre'
+                    id='form1'
+                    type='text'
+                    size="lg"
+                  />
+                </MDBCol>
+              </MDBRow>
+
+              <MDBRow>
+                <MDBCol>
+                  <MDBInput
+                    className="input-login"
+                    wrapperClass='mb-2'
+                    label='Apellido'
+                    id='form2'
+                    type='text'
+                    size="lg"
+                  />
+                </MDBCol>
+              </MDBRow>
+
+            </div>
+            <div className="f-form">
+
+              <MDBRow>
+                <MDBCol className="m-form">
+                  <MDBInput
+                    className="input-login"
+                    wrapperClass='mb-2'
+                    label='RUT'
+                    id='rut'
+                    type='text'
+                    size="lg"
+                    value={rutRawValue}
+                    onChange={handleRutChange}
+                    placeholder="11111111-1"
+                    maxLength={12}
+                    pattern="\d{1,2}\.\d{3}\.\d{3}-\d{1,2}"
+                    title="El RUT debe tener el siguiente formato: xx.xxx.xxx-x"
+                  />
+                </MDBCol>
+              </MDBRow>
+
+              <MDBRow>
+                <MDBCol>
+                  <MDBInput
+                    className="input-login"
+                    wrapperClass='mb-2'
+                    label='Teléfono'
+                    id='form6'
+                    type='text'
+                    size="lg"
+                  />
+                </MDBCol>
+              </MDBRow>
+
+            </div>
+
+            <MDBRow>
+              <MDBCol>
+                <Select
+                  className='pb-2'
+                  defaultValue={selectedOption}
+                  onChange={setSelectedOption}
+                  options={optionsComunas}
+                  isSearchable={false}
+                  placeholder='Selecciona tu comuna'
+                />
+              </MDBCol>
+            </MDBRow>
+
+            <MDBRow>
+              <MDBCol>
                 <MDBInput
-                  className="input-login" 
-                  wrapperClass='mb-2' 
-                  label='Nombre' 
-                  id='form1' 
-                  type='text' 
+                  className="input-login"
+                  wrapperClass='mb-2'
+                  label='Correo electrónico'
+                  id='form3'
+                  type='email'
                   size="lg"
+                  onChange={({ target }) => setUser({ ...user, ["email"]: target.value })}
                 />
               </MDBCol>
             </MDBRow>
 
             <MDBRow>
               <MDBCol>
-                <MDBInput 
-                  className="input-login"
-                  wrapperClass='mb-2' 
-                  label='Apellido' 
-                  id='form2' 
-                  type='text' 
-                  size="lg"
-                />
-              </MDBCol>
-            </MDBRow>
-
-          </div>
-          <div className="f-form">
-
-            <MDBRow>
-              <MDBCol className="m-form">
-                <MDBInput 
-                  className="input-login"
-                  wrapperClass='mb-2' 
-                  label='RUT' 
-                  id='rut' 
-                  type='text' 
-                  size="lg"
-                  value={rutRawValue}
-                  onChange={handleRutChange}
-                  placeholder="11111111-1"
-                  maxLength={12}
-                  pattern="\d{1,2}\.\d{3}\.\d{3}-\d{1,2}"
-                  title="El RUT debe tener el siguiente formato: xx.xxx.xxx-x"
+                <Select
+                  className='pb-2'
+                  defaultValue={selectedOption}
+                  onChange={setSelectedOption}
+                  options={options}
+                  isSearchable={false}
+                  placeholder='Selecciona un usuario'
                 />
               </MDBCol>
             </MDBRow>
 
             <MDBRow>
               <MDBCol>
-                <MDBInput 
-                  className="input-login"
-                  wrapperClass='mb-2' 
-                  label='Teléfono' 
-                  id='form6' 
-                  type='text' 
-                  size="lg"
-                />
+                <MDBBtn
+                  color='dark'
+                  onClick={addUser}>
+                  Registrar
+                </MDBBtn>
               </MDBCol>
             </MDBRow>
+          </MDBCard>
 
-          </div>
-
-          <MDBRow>
-            <MDBCol>
-            <Select
-              className='pb-2'
-              defaultValue={selectedOption}
-              onChange={setSelectedOption}
-              options={optionsComunas}
-              isSearchable={false}
-              placeholder='Selecciona tu comuna'
-            />
-            </MDBCol>
-          </MDBRow>
-
-          <MDBRow>
-            <MDBCol>
-              <MDBInput 
-                className="input-login"
-                wrapperClass='mb-2' 
-                label='Correo electrónico' 
-                id='form3' 
-                type='email' 
-                size="lg"
-                onChange={({ target }) => setUser({ ...user, ["email"]: target.value })} 
-              />
-            </MDBCol>
-          </MDBRow>
-
-          <MDBRow>
-            <MDBCol>
-            <Select
-              className='pb-2'
-              defaultValue={selectedOption}
-              onChange={setSelectedOption}
-              options={options}
-              isSearchable={false}
-              placeholder='Selecciona un usuario'
-            />
-            </MDBCol>
-          </MDBRow>
-
-          <MDBRow>
-            <MDBCol>
-              <MDBBtn 
-                color='dark' 
-                onClick={addUser}>
-                Registrar
-              </MDBBtn>
-            </MDBCol>
-          </MDBRow>
-        </MDBCard>
-
-      </div>
-    </MDBContainer>
+        </div>
+      </MDBContainer>
+      <Footer />
+    </>
   );
 }
 

@@ -4,9 +4,10 @@ import { useEffect } from "react";
 const Context = createContext(null);
 
 function Provider({ children }) {
-    const BASE_URL = "https://api.npoint.io/259dd18e1698198203b3"
+    const canchasUsuario = "https://api.npoint.io/259dd18e1698198203b3" 
 
     const [users, setUsers] = useState([]);
+
     const [tenants, setTenants] = useState([]);
     
     const [session, setSession] = useState(null);
@@ -14,6 +15,12 @@ function Provider({ children }) {
     const [canchas, setCanchas] = useState(null);
 
     useEffect(() => {
+        fetch({canchasUsuario})
+          .then((response) => response.json())
+          .then((data) => setCanchas(data));
+      }, []);
+
+      useEffect(() => {
         fetch({BASE_URL})
           .then((response) => response.json())
           .then((data) => setCanchas(data));

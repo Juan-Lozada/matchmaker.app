@@ -37,8 +37,8 @@ export default function PerfilUser() {
   return (
     <>
       <Container className="flex-column flex-column" style={{ color: 'white' }}>
-        <div className="vh-100 pt-5 container-base"  >
-          <Form className="form w-50 mx-auto border p-3 rounded text-white form-base" >
+        <div className="perfil-card vh-100 pt-5 container-base"  >
+          <Form className=" perfil-form w-50 mx-auto border bg-light p-3 rounded text-dark form-base" >
             <div >
               <h4>Datos de Perfil</h4>
               <hr />

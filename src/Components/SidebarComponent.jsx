@@ -5,6 +5,7 @@ import { IconContext } from "react-icons";
 import { Link } from "react-router-dom";
 import { SidebarData } from "../API/sidebarData";
 import "../styles/sidebar.css";
+import Footer from "./Footer";
 
 export default function SidebarComponent() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -33,9 +34,13 @@ export default function SidebarComponent() {
                     {item.icon}
                     <span>{item.title}</span>
                   </Link>
+
                 </li>
               );
-            })}
+            })}            <div className="position-absolute bottom-0 start-0">
+              <Footer />
+            </div>
+
           </ul>
         </nav>
         <div className={sidebarOpen ? 'menu-icon' : ''} onClick={toggleSidebar}>

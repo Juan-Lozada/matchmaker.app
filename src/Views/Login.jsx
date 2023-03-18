@@ -1,138 +1,145 @@
-import { 
+import {
     useNavigate,
-    NavLink } 
-  from "react-router-dom";
-  
-  import {
+    NavLink
+}
+    from "react-router-dom";
+
+import {
     MDBBtn,
     MDBContainer,
     MDBCard,
     MDBRow,
     MDBCol,
-    MDBInput }
-  from 'mdb-react-ui-kit';
-  
-  import '../styles/login.css';
-  
-  import Matchmakerlogo from '../img/logoTransparente.png'
-  
-  import { useContext, useState } from "react";
-  
-  import ContextOrigin from "../Context";
-  
-  const { Context } = ContextOrigin;
-  
-  export default function Login() {
-    
+    MDBInput
+}
+    from 'mdb-react-ui-kit';
+
+import '../styles/login.css';
+
+import Matchmakerlogo from '../img/logoTransparente.png'
+
+import { useContext, useState } from "react";
+
+import ContextOrigin from "../Context";
+import Footer from "../Components/Footer";
+
+const { Context } = ContextOrigin;
+
+export default function Login() {
+
     const { setSession, users } = useContext(Context);
-  
+
     const [user, setUser] = useState({});
-  
+
     const navigate = useNavigate();
-    
+
     const addUser = () => {
-      
-      const userExists = users.some((u) => u.email == user.email && u.password == user.password) ||
-      true;
-  
-      if (userExists) {
-        setSession(user);
-        alert("Usuario identificado con éxito");
-        navigate("/user/dashboard");
-      } else {
-        alert("Email o contraseña incorrecta");
-      }
+
+        const userExists = users.some((u) => u.email == user.email && u.password == user.password) ||
+            true;
+
+        if (userExists) {
+            setSession(user);
+            alert("Usuario identificado con éxito");
+            navigate("/user/dashboard");
+        } else {
+            alert("Email o contraseña incorrecta");
+        }
     };
-  
+
     return (
-      <MDBContainer className="d-flex">
-        <div className="fondo-card d-flex">
-          <MDBCard>      
-            
-            <MDBRow>
-              <MDBCol>
-                <img src={Matchmakerlogo} />
-              </MDBCol>
-            </MDBRow>
-  
-            <MDBRow>
-              <MDBCol>
-                <p>Iniciar sesión en su cuenta</p>
-              </MDBCol>
-            </MDBRow>
+        <>
+            <MDBContainer className="d-flex">
+                <div className="fondo-card d-flex">
+                    <MDBCard>
 
-            <MDBRow>
-            <MDBCol>
-              <MDBInput
-                className="input-login" 
-                wrapperClass='mb-4' 
-                label='Email address' 
-                id='loginEmail' 
-                type='email' 
-                size="lg"
-                onChange={({ target }) => setUser({ ...user, ["email"]: target.value })} 
-              />
-            </MDBCol>
-          </MDBRow>
+                        <MDBRow>
+                            <MDBCol>
+                                <img src={Matchmakerlogo} />
+                            </MDBCol>
+                        </MDBRow>
 
-          <MDBRow>
-            <MDBCol>
-              <MDBInput 
-                className="input-login" 
-                wrapperClass='mb-4' 
-                label='Password' 
-                id='loginPasword' 
-                type='password' 
-                size="lg"
-                onChange={({ target }) => setUser({ ...user, ["password"]: target.value })} 
-              />
-            </MDBCol>
-          </MDBRow>
+                        <MDBRow>
+                            <MDBCol>
+                                <p>Iniciar sesión en su cuenta</p>
+                            </MDBCol>
+                        </MDBRow>
 
-          <MDBRow>
-            <MDBCol>
-              <MDBBtn 
-                color='dark' 
-                onClick={addUser}>
-                Login
-              </MDBBtn>
-            </MDBCol>
-          </MDBRow>
-          <MDBRow>
-            <MDBCol>
-              <a className="text-muted text-color" href="/recover">¿Has olvidado tu contraseña?</a>
-            </MDBCol>
-          </MDBRow>
+                        <MDBRow>
+                            <MDBCol>
+                                <MDBInput
+                                    className="input-login"
+                                    wrapperClass='mb-4'
+                                    label='Email address'
+                                    id='loginEmail'
+                                    type='email'
+                                    size="lg"
+                                    onChange={({ target }) => setUser({ ...user, ["email"]: target.value })}
+                                />
+                            </MDBCol>
+                        </MDBRow>
 
-          <MDBRow>
-            <MDBCol>
-              <p className="text-muted">¿No tienes una cuenta?</p>
-            </MDBCol>
-          </MDBRow>
+                        <MDBRow>
+                            <MDBCol>
+                                <MDBInput
+                                    className="input-login"
+                                    wrapperClass='mb-4'
+                                    label='Password'
+                                    id='loginPasword'
+                                    type='password'
+                                    size="lg"
+                                    onChange={({ target }) => setUser({ ...user, ["password"]: target.value })}
+                                />
+                            </MDBCol>
+                        </MDBRow>
 
-          <MDBRow>
-            <MDBCol>
-              <NavLink 
-                to="/register" 
-                className="text-muted text-color">
-                Regístrate Aquí
-              </NavLink>
-            </MDBCol>
-          </MDBRow>
-        </MDBCard>
+                        <MDBRow>
+                            <MDBCol>
+                                <MDBBtn
+                                    color='dark'
+                                    onClick={addUser}>
+                                    Login
+                                </MDBBtn>
+                            </MDBCol>
+                        </MDBRow>
+                        <MDBRow>
+                            <MDBCol>
+                                <a className="text-muted text-color" href="/recover">¿Has olvidado tu contraseña?</a>
+                            </MDBCol>
+                        </MDBRow>
 
-        <MDBCard className="card-img">
-          <img 
-            src="https://w-wa.co.uk/wp-content/uploads/2021/04/Wynne-Williams_associates_landscape_architects_essex_MUGA_design_drone_shot.jpg" 
-            alt="Login image" 
-            className="w-100 img-login" 
-            style={{ height: '600px', width: '1000px' }} 
-          />
-        </MDBCard>
+                        <MDBRow>
+                            <MDBCol>
+                                <p className="text-muted">¿No tienes una cuenta?</p>
+                            </MDBCol>
+                        </MDBRow>
 
-      </div>
-    </MDBContainer>
-  );
+                        <MDBRow>
+                            <MDBCol>
+                                <NavLink
+                                    to="/register"
+                                    className="text-muted text-color">
+                                    Regístrate Aquí
+                                </NavLink>
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBCard>
+
+                    <MDBCard className="card-img">
+                        <img
+                            src="https://w-wa.co.uk/wp-content/uploads/2021/04/Wynne-Williams_associates_landscape_architects_essex_MUGA_design_drone_shot.jpg"
+                            alt="Login image"
+                            className="w-100 img-login"
+                            style={{ height: '600px', width: '1000px' }}
+                        />
+                    </MDBCard>
+
+                </div>
+
+            </MDBContainer>
+            <Footer />
+        </>
+    );
 }
 
 
