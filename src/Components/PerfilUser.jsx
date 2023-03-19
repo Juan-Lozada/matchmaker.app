@@ -68,10 +68,15 @@ export default function PerfilUser() {
                 </Form.Group>
               </MDBCol>
             </MDBRow>
+            <MDBRow >
+              <MDBCol col="12" className="justify">
+                <Button className="btn-actualizar" type="submit" onClick={actInfo}  >
+                  Actualizar
+                </Button>
+              </MDBCol>
+            </MDBRow>
 
-            <Button variant="text-dark me-3 btn-actua" onClick={actInfo} style={{ color: 'white' }} >
-              Actualizar
-            </Button>
+
           </Form>
         </div>
       </Container>

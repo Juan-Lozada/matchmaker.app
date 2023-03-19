@@ -107,105 +107,150 @@ export default function Register() {
                 <p>Registrar una cuenta</p>
               </MDBCol>
             </MDBRow>
+            <form>
+              <div className="f-form">
 
-            <div className="f-form">
+                <MDBRow>
+                  <MDBCol className="m-form">
+                    <MDBInput
+                      className="input-login"
+                      wrapperClass='mb-2'
+                      label='Nombre'
+                      id='form1'
+                      type='text'
+                      size="lg"
+                      onChange={({ target }) => setUser({ ...user, ["nombre"]: target.value })}
+                    />
+                  </MDBCol>
+                </MDBRow>
 
-              <MDBRow>
-                <MDBCol className="m-form">
-                  <MDBInput
-                    className="input-login"
-                    wrapperClass='mb-2'
-                    label='Nombre'
-                    id='form1'
-                    type='text'
-                    size="lg"
-                    onChange={({ target }) => setUser({ ...user, ["nombre"]: target.value })}
-                  />
-                </MDBCol>
-              </MDBRow>
+                <MDBRow>
+                  <MDBCol>
+                    <MDBInput
+                      className="input-login"
+                      wrapperClass='mb-2'
+                      label='Apellido'
+                      id='form2'
+                      type='text'
+                      size="lg"
+                      onChange={({ target }) => setUser({ ...user, ["apellido_paterno"]: target.value })}
+                    />
+                  </MDBCol>
+                </MDBRow>
+
+              </div>
+
+              <div className="f-form">
+                <MDBRow>
+                  <MDBCol>
+                    <MDBInput
+                      className="input-login"
+                      wrapperClass='mb-2'
+                      label='Password'
+                      id='form3'
+                      type='password'
+                      size="lg"q
+                      minLength="6"
+                      onChange={({ target }) => setUser({ ...user, ["password"]: target.value })}
+                    />
+                  </MDBCol>
+                </MDBRow>
+
+                <MDBRow>
+                  <MDBCol>
+                    <MDBInput
+                      className="input-login"
+                      wrapperClass='mb-2'
+                      label='Correo electrónico'
+                      id='form4'
+                      type='email'
+                      size="lg"
+                      onChange={({ target }) => setUser({ ...user, ["email"]: target.value })}
+                    />
+                  </MDBCol>
+                </MDBRow>
+              </div>
+
+              <div className="f-form">
+
+                <MDBRow>
+                  <MDBCol className="m-form">
+                    <MDBInput
+                      className="input-login"
+                      wrapperClass='mb-2'
+                      label='RUT'
+                      id='rut'
+                      type='text'
+                      size="lg"
+                      value={rutRawValue}
+                      onChange={handleRutChange}
+                      placeholder="11111111-1"
+                      maxLength={10}
+                      pattern="\d{1,2}\.\d{3}\.\d{3}-\d{1,2}"
+                      title="El RUT debe tener el siguiente formato: xx.xxx.xxx-x"
+                    />
+                  </MDBCol>
+                </MDBRow>
+
+                <MDBRow>
+                  <MDBCol>
+                    <MDBInput
+                      className="input-login"
+                      wrapperClass='mb-2'
+                      label='Teléfono'
+                      id='form5'
+                      type='number'
+                      size="lg"
+                      onChange={({ target }) => setUser({ ...user, ["telefono"]: target.value })}
+                    />
+                  </MDBCol>
+                </MDBRow>
+
+              </div>
+
+              <div className="f-form">
+                <MDBRow>
+                  <MDBCol>
+                    <MDBInput
+                      className="input-login"
+                      wrapperClass='mb-2'
+                      label='Direccion'
+                      id='form6'
+                      type='text'
+                      size="lg"
+                      onChange={({ target }) => setUser({ ...user, ["direccion"]: target.value })}
+                    />
+                  </MDBCol>
+                </MDBRow>
+
+                <MDBRow>
+                  <MDBCol>
+                    <Select
+                      className='pb-2'
+                      defaultValue={selectedOption}
+                      onChange={() => { setSelectedOption, ({ target }) => setUser({ ...user, ["comuna"]: target.value }) }}
+                      options={optionsComunas}
+                      isSearchable={false}
+                      placeholder='Selecciona tu comuna'
+                    />
+                  </MDBCol>
+                </MDBRow>
+              </div>
+
 
               <MDBRow>
                 <MDBCol>
-                  <MDBInput
-                    className="input-login"
-                    wrapperClass='mb-2'
-                    label='Apellido'
-                    id='form2'
-                    type='text'
-                    size="lg"
-                    onChange={({ target }) => setUser({ ...user, ["apellido_paterno"]: target.value })}
+                  <Select
+                    className='pb-2'
+                    defaultValue={selectedOption}
+                    onChange={() => { setSelectedOption, ({ target }) => setUser({ ...user, ["tipo_user"]: target.value }) }}
+                    options={options}
+                    isSearchable={false}
+                    placeholder='Selecciona un usuario'
                   />
                 </MDBCol>
               </MDBRow>
-
-            </div>
-            <div className="f-form">
-
-              <MDBRow>
-                <MDBCol className="m-form">
-                  <MDBInput
-                    className="input-login"
-                    wrapperClass='mb-2'
-                    label='RUT'
-                    id='rut'
-                    type='text'
-                    size="lg"
-                    value={rutRawValue}
-                    onChange={handleRutChange}
-                    placeholder="11111111-1"
-                    maxLength={10}
-                    pattern="\d{1,2}\.\d{3}\.\d{3}-\d{1,2}"
-                    title="El RUT debe tener el siguiente formato: xx.xxx.xxx-x"
-                  />
-                </MDBCol>
-              </MDBRow>
-
-              <MDBRow>
-                <MDBCol>
-                  <MDBInput
-                    className="input-login"
-                    wrapperClass='mb-2'
-                    label='Teléfono'
-                    id='form6'
-                    type='number'
-                    size="lg"
-                    onChange={({ target }) => setUser({ ...user, ["telefono"]: target.value })}
-                  />
-                </MDBCol>
-              </MDBRow>
-
-            </div>
-
-            <div className="f-form">
-              <MDBRow>
-                <MDBCol>
-                  <MDBInput
-                    className="input-login"
-                    wrapperClass='mb-2'
-                    label='Direccion'
-                    id='form2'
-                    type='text'
-                    size="lg"
-                    onChange={({ target }) => setUser({ ...user, ["direccion"]: target.value })}
-                  />
-                </MDBCol>
-              </MDBRow>
-
-              <MDBRow>
-                <MDBCol>
-                  <MDBInput
-                    className="input-login"
-                    wrapperClass='mb-2'
-                    label='Correo electrónico'
-                    id='form3'
-                    type='email'
-                    size="lg"
-                    onChange={({ target }) => setUser({ ...user, ["email"]: target.value })}
-                  />
-                </MDBCol>
-              </MDBRow>
-            </div>
-
+            </form>
 
             <MDBRow>
               <MDBCol>
