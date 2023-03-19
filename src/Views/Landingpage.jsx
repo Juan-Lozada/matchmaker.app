@@ -1,5 +1,4 @@
-
-import FooterComponent from "../Components/Footer";
+import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 
 import '../styles/header.css'
@@ -7,11 +6,11 @@ import '../styles/header.css'
 
 export default function Home() {
   return (
-    <div className="header">
-      <div className="layout"></div>
+    <>
+      <div></div>
       <Header />
-      <FooterComponent />
-    </div>
+      <Footer/>
+    </>
 
   );
 }

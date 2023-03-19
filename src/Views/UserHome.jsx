@@ -7,7 +7,6 @@ export default function UserHome() {
     <div id="perfil" className="bg-light vh-100">
       <SidebarComponent/>
       <UserDashboard />
-      <FooterComponent/>
     </div>
   );
 }

@@ -1,107 +1,56 @@
-.header {
-    height: 100%;
-}
+.h-fondo {
+    background-image: url("https://media.istockphoto.com/id/1281595486/photo/aerial-hong-kongs-housing-estate-with-basketball-court.jpg?s=612x612&w=0&k=20&c=Rpr5HS8FG2sXELs2mziV67WtCm4Bc0orENDIW-RaQF4=");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 75vh;
+}  
 
-.background {
-    padding-top: 0;
-    height:100%;
+.h-container {
+    background-color: rgba(255, 255, 255, .9);
+    justify-content: center;
     flex-direction: column;
     align-items: center;
-    text-align: center
-
+    display: flex;
+    height: 75vh;
+    padding: 0;
+    margin: 0;
 }
 
-
-
-.intro-logo {
-    bottom: 0;
-    left: 0;
-    right: 0;
-
+p {
+    text-align: center;
 }
-
-.intro-logo h1 {
-    font-size: 1.8em;
-    font-weight: 900;
-    font-family: 'Philosopher', sans-serif;
-    color: var(--brand-color);
-
-}
-
-@media (min-width: 768px) {
-    .intro-logo h1 {
-        font-size: 3.5em;
-    }
-}
-
-.intro-logo h3 {
-    font-size: 1rem;
-    font-weight: 300;
-    color: var(--gray-color-1);
-    margin-bottom: 3em;
-}
-
-.intro-logo img {
-    max-width: 95%;
-    height: auto;
-}
-
-
-.intro-button {
-    margin-top: 2.3em;
-    margin-bottom: 3em;
-
-}
-
-.intro-button a {
-    padding: 0.65em 2.6em;
-    border-radius: 20px;
-    color: var(--brand-color);
-    border: 1.8px solid var(--brand-color);
-    background: white;
-    transition: all 0.5s;
-
-}
-
-.intro-button a:hover {
-    background-color: var(--brand-color);
-    color: white;
-}
-
 
 .btn {
-    font-family: "Lato";
-    text-transform: uppercase;
-    font-weight: 300;
-    border-radius: 2px;
+    border-radius: 2em!important;
     background-color: transparent;
-    border: 3px solid #f6f6f6;
-    padding: 6px 12px;
+    border: 3px solid #d1d5db;
+    text-transform: uppercase;
     transition: all 0.5s ease;
+    font-family: "Lato";
+    border-radius: 2px;
+    margin-bottom: 1em;
+    padding: 6px 12px;    
+    font-weight: 300;
     cursor: pointer;
-
-}
-
-.btn:hover,
-button:hover {
-    outline: 0;
-    color: #f6f6f6;
-}
-
-.btn:active,
-button:active {
-    outline: 0;
-    color: #f6f6f6;
+    width: 20em;    
 }
 
 .btn {
     background: linear-gradient(to bottom, #122953 50%, transparent 50%);
-    background-size: 100% 200%;
     background-position: left bottom;
+    background-size: 100% 200%;    
     color: #000;
 }
 
 .btn:hover {
     background-position: right top;
+}
+
+@media (max-width: 576px) {
+    
+    .b-navlink {
+        flex-direction: column;
+    }
 
 }

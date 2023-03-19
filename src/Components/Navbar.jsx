@@ -1,52 +1,52 @@
-import {
-  Container,
-  Nav,
-  Navbar,
-  Button
-}
-  from 'react-bootstrap';
+// import {
+//   Container,
+//   Nav,
+//   Navbar,
+//   Button
+// }
+//   from 'react-bootstrap';
 
-import { Link, NavLink } from "react-router-dom";
+// import { Link, NavLink } from "react-router-dom";
 
-import logo from '../img/favicon.png';
+// import logo from '../img/favicon.png';
 
-import '../styles/navbar.css';
+// import '../styles/navbar.css';
 
-export default function Nvbar() {
+// export default function Nvbar() {
 
-  return (
-    <>
-      <Navbar fixed="top" bg="dark" variant="dark" expand="lg" className='d-flex justify-content-start px-5'>
-        <Container>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Container className='d-flex justify-content-start px-5 '>
-                <NavLink to='/Login' style={{ textDecoration: 'none', Color:"#BAD7E9" }}>
-                  Login
-                </NavLink>
-              </Container>
-              <Container className='d-flex justify-content-start px-5 '>
-                <NavLink  to='/Login' style={{ textDecoration: 'none', Color:"#BAD7E9" }}>
-                  Registrar
-                </NavLink>
-              </Container>
-            </Nav>
-          </Navbar.Collapse>
-          <Link to="/" className="text-decoration-none">
-            <Navbar.Brand>
-              <img
-                src={logo}
-                alt=""
-              />
-              Match Maker
-            </Navbar.Brand>
-          </Link>
-        </Container>
-      </Navbar>
-    </>
-  );
-};
+//   return (
+//     <>
+//       <Navbar fixed="top" bg="dark" variant="dark" expand="lg" className='d-flex justify-content-start px-5'>
+//         <Container>
+//           <Navbar.Toggle aria-controls="basic-navbar-nav" />
+//           <Navbar.Collapse id="basic-navbar-nav">
+//             <Nav className="me-auto">
+//               <Container className='d-flex justify-content-start px-5 '>
+//                 <NavLink to='/Login' style={{ textDecoration: 'none', Color:"#BAD7E9" }}>
+//                   Login
+//                 </NavLink>
+//               </Container>
+//               <Container className='d-flex justify-content-start px-5 '>
+//                 <NavLink  to='/Login' style={{ textDecoration: 'none', Color:"#BAD7E9" }}>
+//                   Registrar
+//                 </NavLink>
+//               </Container>
+//             </Nav>
+//           </Navbar.Collapse>
+//           <Link to="/" className="text-decoration-none">
+//             <Navbar.Brand>
+//               <img
+//                 src={logo}
+//                 alt=""
+//               />
+//               Match Maker
+//             </Navbar.Brand>
+//           </Link>
+//         </Container>
+//       </Navbar>
+//     </>
+//   );
+// };
 
 
 
