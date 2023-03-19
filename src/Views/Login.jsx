@@ -1,27 +1,11 @@
-import {
-    useNavigate,
-    NavLink
-}
-    from "react-router-dom";
-
-import {
-    MDBBtn,
-    MDBContainer,
-    MDBCard,
-    MDBRow,
-    MDBCol,
-    MDBInput
-}
-    from 'mdb-react-ui-kit';
-
+import { useNavigate, NavLink } from "react-router-dom";
+import { MDBBtn, MDBContainer, MDBCard, MDBRow, MDBCol, MDBInput } from 'mdb-react-ui-kit';
 import '../styles/login.css';
-
 import Matchmakerlogo from '../img/logoTransparente.png'
-
 import { useContext, useState } from "react";
-
 import ContextOrigin from "../Context";
 import Footer from "../Components/Footer";
+import Api from "../Api/Api"; 
 
 const { Context } = ContextOrigin;
 
@@ -29,22 +13,27 @@ export default function Login() {
 
     const { setSession, users } = useContext(Context);
 
-    const [user, setUser] = useState({});
+    const [formData, setFormData] = useState({ email: '', password: '' });
 
     const navigate = useNavigate();
 
-    const addUser = () => {
+    const Login = async (event) => { 
+        event.preventDefault();
+        try {
+            const response = await Api.iniciarSesion(formData.email, formData.password); 
+            console.log(response.data);
 
-        const userExists = users.some((u) => u.email == user.email && u.password == user.password) ||
-            true;
-
-        if (userExists) {
-            setSession(user);
-            alert("Usuario identificado con éxito");
-            navigate("/user/dashboard");
-        } else {
+            setSession(response.data.session);
+            navigate("/user/dashboard"); 
+        } catch (error) {
+            console.error(error);
             alert("Email o contraseña incorrecta");
         }
+    };
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setFormData(prevState => ({ ...prevState, [name]: value }));
     };
 
     return (
@@ -74,7 +63,9 @@ export default function Login() {
                                     id='loginEmail'
                                     type='email'
                                     size="lg"
-                                    onChange={({ target }) => setUser({ ...user, ["email"]: target.value })}
+                                    value={formData.email}
+                                    onChange={handleInputChange}
+                                    name="email"
                                 />
                             </MDBCol>
                         </MDBRow>
@@ -88,7 +79,9 @@ export default function Login() {
                                     id='loginPasword'
                                     type='password'
                                     size="lg"
-                                    onChange={({ target }) => setUser({ ...user, ["password"]: target.value })}
+                                    value={formData.password}
+                                    onChange={handleInputChange}
+                                    name="password"
                                 />
                             </MDBCol>
                         </MDBRow>
@@ -97,7 +90,7 @@ export default function Login() {
                             <MDBCol>
                                 <MDBBtn
                                     color='dark'
-                                    onClick={addUser}>
+                                    onClick={Login}>
                                     Login
                                 </MDBBtn>
                             </MDBCol>

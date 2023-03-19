@@ -26,6 +26,7 @@ import ContextOrigin from "../Context";
 
 import ApiComunas from "../API/comunas.json"
 import Footer from '../Components/Footer';
+import Api from '../API/Api';
 
 const { Context } = ContextOrigin;
 
@@ -38,11 +39,20 @@ export default function Register() {
   const [rutRawValue, setRutRawValue] = useState('');
   const navigate = useNavigate();
 
-  const addUser = () => {
-    setUsers([...users, user]);
-    alert("Usuario Creado con éxito, intente iniciar sesión");
-    navigate("/login");
+  const handleRegistro = async () => {
+    try {
+      const response = await Api.registroUsuario(user);
+      if (response.status === 201) {
+        alert('Usuario creado con éxito. Inicia sesión para continuar.');
+        navigate('/login');
+      } else {
+        alert('Ha ocurrido un error al crear el usuario. Inténtalo de nuevo más tarde.');
+      }
+    } catch (error) {
+      alert('Ha ocurrido un error al crear el usuario. Inténtalo de nuevo más tarde.');
+    }
   };
+
 
   const formatValue = (inputValue) => {
     const inputWithoutDv = inputValue.replace(/[^0-9]/g, '');
@@ -56,10 +66,10 @@ export default function Register() {
   };
 
   const handleRutChange = (event) => {
-    const inputValue = event.target.value;
-    const formattedValue = formatValue(inputValue);
-    setRut(formattedValue);
-    setRutRawValue(inputValue);
+    const { value } = event.target;
+    const formattedValue = formatValue(value);
+    setUser({ ...user, rut: formattedValue });
+    setRutRawValue(value);
   };
 
   const options = [
@@ -109,6 +119,7 @@ export default function Register() {
                     id='form1'
                     type='text'
                     size="lg"
+                    onChange={({ target }) => setUser({ ...user, ["nombre"]: target.value })}
                   />
                 </MDBCol>
               </MDBRow>
@@ -122,6 +133,7 @@ export default function Register() {
                     id='form2'
                     type='text'
                     size="lg"
+                    onChange={({ target }) => setUser({ ...user, ["apellido_paterno"]: target.value })}
                   />
                 </MDBCol>
               </MDBRow>
@@ -141,7 +153,7 @@ export default function Register() {
                     value={rutRawValue}
                     onChange={handleRutChange}
                     placeholder="11111111-1"
-                    maxLength={12}
+                    maxLength={10}
                     pattern="\d{1,2}\.\d{3}\.\d{3}-\d{1,2}"
                     title="El RUT debe tener el siguiente formato: xx.xxx.xxx-x"
                   />
@@ -155,59 +167,51 @@ export default function Register() {
                     wrapperClass='mb-2'
                     label='Teléfono'
                     id='form6'
-                    type='text'
+                    type='number'
                     size="lg"
+                    onChange={({ target }) => setUser({ ...user, ["telefono"]: target.value })}
                   />
                 </MDBCol>
               </MDBRow>
 
             </div>
 
-            <MDBRow>
-              <MDBCol>
-                <Select
-                  className='pb-2'
-                  defaultValue={selectedOption}
-                  onChange={setSelectedOption}
-                  options={optionsComunas}
-                  isSearchable={false}
-                  placeholder='Selecciona tu comuna'
-                />
-              </MDBCol>
-            </MDBRow>
+            <div className="f-form">
+              <MDBRow>
+                <MDBCol>
+                  <MDBInput
+                    className="input-login"
+                    wrapperClass='mb-2'
+                    label='Direccion'
+                    id='form2'
+                    type='text'
+                    size="lg"
+                    onChange={({ target }) => setUser({ ...user, ["direccion"]: target.value })}
+                  />
+                </MDBCol>
+              </MDBRow>
 
-            <MDBRow>
-              <MDBCol>
-                <MDBInput
-                  className="input-login"
-                  wrapperClass='mb-2'
-                  label='Correo electrónico'
-                  id='form3'
-                  type='email'
-                  size="lg"
-                  onChange={({ target }) => setUser({ ...user, ["email"]: target.value })}
-                />
-              </MDBCol>
-            </MDBRow>
+              <MDBRow>
+                <MDBCol>
+                  <MDBInput
+                    className="input-login"
+                    wrapperClass='mb-2'
+                    label='Correo electrónico'
+                    id='form3'
+                    type='email'
+                    size="lg"
+                    onChange={({ target }) => setUser({ ...user, ["email"]: target.value })}
+                  />
+                </MDBCol>
+              </MDBRow>
+            </div>
 
-            <MDBRow>
-              <MDBCol>
-                <Select
-                  className='pb-2'
-                  defaultValue={selectedOption}
-                  onChange={setSelectedOption}
-                  options={options}
-                  isSearchable={false}
-                  placeholder='Selecciona un usuario'
-                />
-              </MDBCol>
-            </MDBRow>
 
             <MDBRow>
               <MDBCol>
                 <MDBBtn
                   color='dark'
-                  onClick={addUser}>
+                  onClick={handleRegistro}>
                   Registrar
                 </MDBBtn>
               </MDBCol>
