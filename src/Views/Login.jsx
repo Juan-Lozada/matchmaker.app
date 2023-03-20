@@ -11,7 +11,7 @@ const { Context } = ContextOrigin;
 
 export default function Login() {
 
-    const { setSession, users } = useContext(Context);
+    const { setSession, users, session } = useContext(Context);
 
     const [formData, setFormData] = useState({ email: '', password: '' });
 
@@ -24,6 +24,7 @@ export default function Login() {
             console.log(response.data);
 
             setSession(response.data.session);
+            console.log(session)
             navigate("/user/dashboard"); 
         } catch (error) {
             console.error(error);
