@@ -149,7 +149,7 @@ export default function Register() {
                       label='Password'
                       id='form3'
                       type='password'
-                      size="lg"q
+                      size="lg"
                       minLength="6"
                       onChange={({ target }) => setUser({ ...user, ["password"]: target.value })}
                     />
@@ -225,13 +225,14 @@ export default function Register() {
 
                 <MDBRow>
                   <MDBCol>
-                    <Select
-                      className='pb-2'
-                      defaultValue={selectedOption}
-                      onChange={() => { setSelectedOption, ({ target }) => setUser({ ...user, ["comuna"]: target.value }) }}
-                      options={optionsComunas}
-                      isSearchable={false}
-                      placeholder='Selecciona tu comuna'
+                    <MDBInput
+                      className="input-login"
+                      wrapperClass='mb-2'
+                      label='Comuna'
+                      id='form6'
+                      type='text'
+                      size="lg"
+                      onChange={({ target }) => setUser({ ...user, ["comuna"]: target.value })}
                     />
                   </MDBCol>
                 </MDBRow>
@@ -243,7 +244,10 @@ export default function Register() {
                   <Select
                     className='pb-2'
                     defaultValue={selectedOption}
-                    onChange={() => { setSelectedOption, ({ target }) => setUser({ ...user, ["tipo_user"]: target.value }) }}
+                    onChange={(selectedOption) => {
+                      setSelectedOption(selectedOption);
+                      setUser({ ...user, ["tipo_user"]: selectedOption.value });
+                    }}
                     options={options}
                     isSearchable={false}
                     placeholder='Selecciona un usuario'
