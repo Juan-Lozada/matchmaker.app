@@ -20,7 +20,7 @@ export const SidebarData = ({ session }) => [
   },
   {
     title: "Profile",
-    path: `/user/profile/${session.usuario.id}`,
+    path: `/user/profile`,
     icon: <VscIcons.VscAccount/>,
     cName: "nav-text"
   },
