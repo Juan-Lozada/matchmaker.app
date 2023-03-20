@@ -12,6 +12,7 @@ const Api = {
   getRecintosTenant: () => axios.get(`${API_URL}/recintos/tenant`),
   getRecintosUser: () => axios.get(`${API_URL}/recintos/usuario`),
   getCanchas: () => axios.get(`${API_URL}/canchas`),
+  getUsuarios: () => axios.get(`${API_URL}/usuario/${id}`),
   editarRecinto: (id, data) => axios.put(`${API_URL}/recinto/${id}`, data),
   editarCancha: (id, data) => axios.put(`${API_URL}/cancha/${id}`, data),
 };

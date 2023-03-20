@@ -18,7 +18,7 @@ export default function Login() {
     const navigate = useNavigate();
 
     const Login = async (event) => { 
-        event.preventDefault();
+        event.preventDefault(event);
         try {
             const response = await Api.iniciarSesion(formData.email, formData.password); 
             console.log(response.data);
