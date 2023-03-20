@@ -32,9 +32,9 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/user/canchas" element={<UserCanchas />} />
               <Route path="/user/profile" element={<UserProfile />} />
-              <Route path="/user/dashboard" element={<UserHome />} />
-              <Route path="/tenant/profile" element={<TenantProfile/>} />
-              <Route path="/tenant/dashboard" element={<TenantHome />} />
+              <Route path="/user/dashboard/:id" element={<UserHome />} />
+              <Route path="/tenant/profile/" element={<TenantProfile/>} />
+              <Route path="/tenant/dashboard/:id" element={<TenantHome />} />
           </Routes>
         </BrowserRouter>
       </Provider>

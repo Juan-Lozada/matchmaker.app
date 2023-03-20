@@ -5,15 +5,28 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import FormCanchas from "./FormCanchas";
 import "../styles/TenatProfile.css";
-import { useContext, useState } from "react";
-
+import { useContext, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ContextOrigin from "../Context";
 import { Container } from "react-bootstrap";
+import context from "react-bootstrap/esm/AccordionContext";
 const { Context } = ContextOrigin;
+import Api from "../API/Api.jsx";
 
 export default function TenantProfile() {
   const navigate = useNavigate();
   let sinCanchas = true;
+  const { id } = useParams();
+  console.log(id)
+
+  useEffect(() => {
+    const dataUser = async () => {
+        const resp = Api.getUser(id);
+        const usuario = await resp;
+        console.log(usuario)
+    }
+    dataUser();
+}, [])
   //   const cambioEstado = () => {
 
   //    sinCanchas = false;

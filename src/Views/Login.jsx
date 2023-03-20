@@ -17,7 +17,7 @@ import Api from "../API/Api.jsx";
 const { Context } = ContextOrigin;
 
 export default function Login() {
-  const { setSession, users } = useContext(Context);
+  const { setSession, session, users, setUsers } = useContext(Context);
 
   const [formData, setFormData] = useState({ email: "", password: "" });
 
@@ -32,11 +32,11 @@ export default function Login() {
       );
       console.log(response.data);
       if (response.data.usuario.tipo_usuario == "Cliente") {
-        setSession(response.data.session);
-        navigate("/user/dashboard");
+        setSession(response.data);
+        navigate(`/user/dashboard/${response.data.usuario.id}`);
       } else {
-        setSession(response.data.session);
-        navigate("/tenant/dashboard");
+        setSession(response.data);
+        navigate(`/tenant/dashboard/${response.data.usuario.id}`);
       }
     } catch (error) {
       console.error(error);

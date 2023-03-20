@@ -7,7 +7,8 @@ import {
   Col } 
 from "react-bootstrap";
 
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
+import Api from "../API/Api.jsx";
 
 import ContextOrigin from "../Context";
 
@@ -16,8 +17,23 @@ const { Context } = ContextOrigin;
 import '../styles/userdashboard.css';
 
 import Matchmakerlogo from '../img/logoTransparente.png'
+import { useParams } from "react-router-dom";
+
+
 
 export default function UserDashboard() {
+
+  const { id } = useParams();
+  console.log(id)
+
+  useEffect(() => {
+    const dataUser = async () => {
+        const resp = Api.getUser(id);
+        const usuario = await resp;
+        console.log(usuario)
+    }
+    dataUser();
+}, [])
 
   return (
     <>

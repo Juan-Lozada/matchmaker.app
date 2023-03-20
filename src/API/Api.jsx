@@ -12,6 +12,7 @@ const Api = {
   registroRecinto: (data) => axios.post(`${API_URL}/registro/recinto`, data),
   registroReserva: (data) => axios.post(`${API_URL}/reserva`, data),
   registroCancha: (data) => axios.post(`${API_URL}/registro/cancha`, data),
+  getUser: (id) => axios.get(`${API_URL}/usuario/` + id),
   getRecintosTenant: () => axios.get(`${API_URL}/recintos/tenant`),
   getRecintosUser: () => axios.get(`${API_URL}/recintos/usuario`),
   getCanchas: () => axios.get(`${API_URL}/canchas`),
