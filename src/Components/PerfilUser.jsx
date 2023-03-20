@@ -1,83 +1,46 @@
-import {
-  Form,
-  Button,
-  Container
-}
-  from "react-bootstrap";
-
-import { MDBInput, MDBRow, MDBCol } from "mdb-react-ui-kit";
-
-import { Navigate } from "react-router-dom";
-
-//import PhoneInput from 'react-phone-input-2'
-//import 'react-phone-input-2/lib/style.css'
-
-import '../styles/userProfile.css';
-
-import { useContext, useState } from "react";
-
+import { 
+  Container, 
+  Card,
+  Row,
+  Col
+ } from "react-bootstrap";
+import { useContext } from "react";
 import ContextOrigin from "../Context";
 
 const { Context } = ContextOrigin;
 
+import "../styles/userProfile.css";
+import Matchmakerlogo from '../img/logoTransparente.png'
+
+
 export default function PerfilUser() {
   const { session } = useContext(Context);
-
-  const [user, setUser] = useState({});
-
-
-  const actInfo = () => {
-    setUsers([...users, user]);
-    alert("Datos actualizados correctamente!");
-    Navigate("/user/profile");
-  };
-
-
+  console.log(session)
 
   return (
     <>
-      <Container className="flex-column flex-column" style={{ color: 'white' }}>
-        <div className="perfil-card vh-100 pt-5 container-base"  >
-          <Form className=" perfil-form w-50 mx-auto border bg-light p-3 rounded text-dark form-base" >
-            <div >
-              <h4>Datos de Perfil</h4>
-              <hr />
-            </div>
-            <Form.Group className=" mb-3 text-dark" controlId="User-Email"  >
-              <Form.Label className="text-light">Email address</Form.Label>
-              <MDBInput className="text-dark" wrapperClass=' mb-4' label='Correo electronico' id='userEmailInput' type='email' size="lg"
-                onChange={({ target }) => setUser({ ...user, ["email"]: target.value })} />
-            </Form.Group>
-            <Form.Group className="text-dark mb-3" controlId="User-Address">
-              <Form.Label className="text-light">Dirección</Form.Label>
-              <MDBInput className="text-dark" wrapperClass='mb-4' label='Direccion' id='userAddresInput' type='text' size="lg"
-                onChange={({ target }) => setUser({ ...user, ["direccion"]: target.value })} />
-            </Form.Group>
-            <MDBRow>
-              <MDBCol col='6' className="text-dark">
-                <Form.Group className="mb-3" controlId="Tenant-Phone" id="userPhoneInput">
-                  <Form.Label className="text-light">Numero de telefono</Form.Label>
-
-                </Form.Group>
-              </MDBCol>
-              <MDBCol col='6'>
-                <Form.Group className="text-dark mb-3" controlId="User-Password" >
-                  <Form.Label className="text-light" >Password</Form.Label>
-                  <MDBInput wrapperClass='mb-4' label='Password' id='userPasswordInput' type='password' size="lg"
-                    onChange={({ target }) => setUser({ ...user, ["password"]: target.value })} />
-                </Form.Group>
-              </MDBCol>
-            </MDBRow>
-            <MDBRow >
-              <MDBCol col="12" className="justify">
-                <Button className="btn-actualizar" type="submit" onClick={actInfo}  >
-                  Actualizar
-                </Button>
-              </MDBCol>
-            </MDBRow>
-
-
-          </Form>
+      <Container className="d-flex">
+        <div className="fondo-card d-flex vh-30  container-base">
+          <Container className="d-flex justify-content-center">
+            <Card style={{ width: "30rem" }}>
+              <Row>
+                <Col>
+                  <img src={Matchmakerlogo} />
+                </Col>
+              </Row>
+              <Card.Header>
+                <h4>Datos de perfil</h4>
+              </Card.Header>
+              <Card.Body className="justify-content-center align-center">
+                <Card.Title className="d-flex justify-content-center">{`${session.usuario.nombre}`}</Card.Title>
+                <Card.Text>
+                  <p>Correo electrónico: <b>{session.usuario.email}</b></p>
+                  <p>Teléfono: <b>{session.usuario.telefono}</b></p>
+                  <p>Comuna: <b>{session.usuario.comuna}</b></p>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Container>
         </div>
       </Container>
     </>

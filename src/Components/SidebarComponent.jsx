@@ -7,8 +7,14 @@ import { SidebarData } from "../API/sidebarData";
 import "../styles/sidebar.css";
 import Footer from "./Footer";
 
+import { useContext } from "react";
+import ContextOrigin from "../Context";
+const { Context } = ContextOrigin;
+
+
 export default function SidebarComponent() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { session } = useContext(Context);
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
@@ -27,7 +33,7 @@ export default function SidebarComponent() {
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>
-            {SidebarData.map((item, index) => {
+            {SidebarData({ session }).map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
                   <Link to={item.path}>

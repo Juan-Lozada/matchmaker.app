@@ -20,10 +20,10 @@ export default function CanchasList() {
   return (
     <>
       <SidebarComponent />
-      <div className="canchas-grid p-5">
+      <div className="canchas-grid p-5 ">
         {console.log(canchas)}
         {canchas && canchas.map((cancha) => (
-          <Cancha key={cancha.id} cancha={cancha} />
+          <Cancha key={cancha.id} cancha={cancha}/>
         ))}
       </div>
     </>

@@ -33,6 +33,7 @@ export default function Login() {
       console.log(response.data);
       if (response.data.usuario.tipo_usuario == "Cliente") {
         setSession(response.data);
+        console.log(session)
         navigate(`/user/dashboard/${response.data.usuario.id}`);
       } else {
         setSession(response.data);
