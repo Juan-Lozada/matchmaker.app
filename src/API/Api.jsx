@@ -4,7 +4,10 @@ const API_URL = 'https://match-maker-backend.vercel.app';
 
 const Api = {
   registroUsuario: (data) => axios.post(`${API_URL}/registro`, data),
-  iniciarSesion: (data) => axios.post(`${API_URL}/login`, data),
+  iniciarSesion: (email, password) => axios.post(`${API_URL}/login`, {
+    'email' : email,
+    'password': password
+  }),
   editarUsuario: (id, data) => axios.put(`${API_URL}/usuario/${id}`, data),
   registroRecinto: (data) => axios.post(`${API_URL}/registro/recinto`, data),
   registroReserva: (data) => axios.post(`${API_URL}/reserva`, data),
