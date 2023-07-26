@@ -17,7 +17,6 @@ import TenantHome from "./Views/TenantHome";
 import UserCanchas from "./Views/Canchas/UserCanchas";
 
 
-
 const { Provider } = Context;
 
 function App() {
@@ -26,15 +25,15 @@ function App() {
       <Provider>
         <BrowserRouter>
           <Routes>
-              <Route index element={<LandingPage />} />
-              <Route path="/logout" element={<LandingPage />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/user/canchas" element={<UserCanchas />} />
-              <Route path="/user/profile" element={<UserProfile />} />
-              <Route path="/user/dashboard/:id" element={<UserHome />} />
-              <Route path="/tenant/profile/" element={<TenantProfile/>} />
-              <Route path="/tenant/dashboard/:id" element={<TenantHome />} />
+            <Route index element={<LandingPage />} />
+            <Route path="/logout" element={<LandingPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/user/canchas" element={<UserCanchas />} />
+            <Route path="/user/profile" element={<UserProfile />} />
+            <Route path="/user/dashboard/:id" element={<UserHome />} />
+            <Route path="/tenant/profile/" element={<TenantProfile />} />
+            <Route path="/tenant/dashboard/:id" element={<TenantHome />} />
           </Routes>
         </BrowserRouter>
       </Provider>
@@ -42,4 +41,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

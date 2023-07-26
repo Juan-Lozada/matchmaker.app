@@ -14,19 +14,19 @@ export const SidebarData = ({ session }) => [
   
   {
     title: "Dashboard",
-    path: `/user/dashboard/${session.usuario.id}`,
+    path: `/${session.usuario.tipo_usuario}/dashboard/${session.usuario.id}`,
     icon: <AiIcons.AiFillHome />,
     cName: "nav-text"
   },
   {
     title: "Profile",
-    path: `/user/profile`,
+    path: `/${session.usuario.tipo_usuario}/profile`,
     icon: <VscIcons.VscAccount/>,
     cName: "nav-text"
   },
   {
     title: "Canchas",
-    path: "/user/canchas",
+    path: `/${session.usuario.tipo_usuario}/canchas`,
     icon: <GiIcons.GiAbstract042 />,
     cName: "nav-text"
   },

@@ -42,7 +42,7 @@ export default function UserDashboard() {
     <>
       <Container className="d-flex">
         <div className="fondo-card d-flex">
-          <Card className="d-flex justify-content-center gap-3">
+          <Card className="d-flex justify-content-center gap-3 p-5">
 
             <Row>
               <Col>

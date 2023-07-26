@@ -40,8 +40,6 @@ const verificarUsuario = async (email, password) => {
     nombre: rows[0].nombre,
     email: rows[0].email,
     id: rows[0].id,
-    comuna: rows[0].comuna,
-    telefono: rows[0].telefono,
     tipo_usuario: rows[0].tipo_user
   };
 
@@ -190,26 +188,22 @@ const registrarCancha = async (cancha) => {
 };
 
 const actualizarCancha = async (cancha, id) => {
-  let { recinto_id, usuarios_id, deporte, jugadores, fecha, estado, img, nombre, precio, ubicacion } = cancha;
+  let { usuarios_id, recinto_id, deporte, jugadores, fecha, estado } = cancha;
   const values = [
-    recinto_id,
     usuarios_id,
+    recinto_id,
     deporte,
     jugadores,
     fecha,
     estado,
-    img,
-    nombre,
-    precio,
-    ubicacion,
     id,
   ];
   const consulta =
-    "UPDATE canchas SET usuarios_id = $1, recinto_id = $2, deporte = $3, jugadores = $4, fecha = $5, estado = $6, img = $7, nombre = $8, precio = $9, ubicacion = $10  WHERE id = $11";
+    "UPDATE cancha SET usuarios_id = $1, recinto_id = $2, deporte = $3, jugadores = $4, fecha = $5, estado = $6 WHERE id = $7";
   await pool.query(consulta, values);
 };
 
-const registrarReserva = async () => {
+const registrarReserva = async (cancha) => {
   let { cancha_id, recinto_id, fecha_inicio, fecha_termino, estado } = reserva;
   const values = [cancha_id, recinto_id, fecha_inicio, fecha_termino, estado];
   const consulta = "INSERT INTO reserva values (DEFAULT, $1, $2, $3, $4, $5)";
